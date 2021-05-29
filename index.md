@@ -1,60 +1,79 @@
+```
+      ____                               _                    _           
+     / ___|___  _ __ ___  _ __  _ __ ___| |__   ___ _ __  ___(_)_   _____ 
+    | |   / _ \| '_ ` _ \| '_ \| '__/ _ \ '_ \ / _ \ '_ \/ __| \ \ / / _ \
+    | |__| (_) | | | | | | |_) | | |  __/ | | |  __/ | | \__ \ |\ V /  __/
+     \____\___/|_| |_| |_| .__/|_|  \___|_| |_|\___|_| |_|___/_| \_/ \___|
+                         |_|
+ _     _                     ____ _                _       _               _   
+| |   (_)_ __  _   ___  __  / ___| |__   ___  __ _| |_ ___| |__   ___  ___| |_ 
+| |   | | '_ \| | | \ \/ / | |   | '_ \ / _ \/ _` | __/ __| '_ \ / _ \/ _ \ __|
+| |___| | | | | |_| |>  <  | |___| | | |  __/ (_| | |_\__ \ | | |  __/  __/ |_ 
+|_____|_|_| |_|\__,_/_/\_\  \____|_| |_|\___|\__,_|\__|___/_| |_|\___|\___|\__|             
+```
+
+```markdown
 ###########
 ## GNOME ##
 ###########
 
-ctrl+alt+t - start terminal
-ctrl+alt+f - start firefox
-ctrl+alt+h - start home
-ctrl+alt+g - start gedit
-alt+F12 - run command
+Ctrl+Alt T — Terminal
+Ctrl+Alt F — Firefox
+Ctrl+Alt H — Home
+Ctrl+Alt G — Gedit
+Alt F12 — Run command
  
-alt+F1 - minimize window
-alt+F2 - toggle maximize window
-alt+F3 - toggle full screen
-ctrl+alt+d - minimize all windows
+Alt F1 — Minimize window
+Alt F2 — Toggle maximize window
+Alt F3 — Toggle full screen
+Ctrl+Alt D — Minimize all windows
 
-ctrl+alt+<F1 to F6> - terminals
-ctrl+alt+<F7 to F12> - Xwindows
-ctrl+alt+backspace - restart X
-ctrl+alt+del - log out
-ctrl+alt+end - shutdown
-super+pgUp/pgDn - switch workspace
+Ctrl+Alt F1-F6 — Terminals (tty-s)
+Ctrl+Alt F7-F12 — Xwindows
+Ctrl+Alt Bksp — Restart X
+Ctrl+Alt Del — Log out
+Ctrl+Alt End — Shutdown
+Super PgUp/PgDn — Switch workspace
+Middle mouse button — Paste selected text
 
-middle mouse button - paste selected text
 
 NAUTILUS/NEMO:
-ctrl+l - location, show path
-ctrl+shift+n - new folder
-ctrl+h - show hidden files
+Ctrl L — Location, show path
+Ctrl+Shift N — New folder
+Ctrl H — Show hidden files
+
 
 GEDIT:
-ctrl+g - find the next instance of the string.
-ctrl+shift+g - find the previous instance of the string. 
-ctrl+shift+k - clear highlight 
+Ctrl G — Find next
+Ctrl+Shift G — Find previous
+Ctrl+Shift K — Clear highlights
+
 
 TERMINAL:
-ctrl+shift+c - copy in terminal
-ctrl+shift+v - paste in terminal
-shift+ctrl+t - new tab   
-shift+ctrl+w - close tab     
-ctrl PgUp/PgDn - change tabs
-ctrl +/- - zoom
-ctrl+d - close terminal
-ctrl+s - scroll lock
+Ctrl+Shift C — Copy
+Ctrl+Shift V — Paste
+Ctrl+Shift T — New tab   
+Ctrl+Shift W — Close tab     
+Ctrl PgUp/PgDn — Switch tab
+Ctrl +/- — Zoom
+Ctrl D — Close terminal
+Ctrl S — Scroll lock
+
 
 BASH:
-    (emacs mode, you can switch to vi mode with: set -o vi)
-ctrl+c - cancel, erase line
-ctrl+a - go to beginning of line
-ctrl+e - end of line
-ctrl+u - copy line
-ctrl+y - paste line
-alt+. - last argument
-ctrl+r - search trough history
-alt+* - show all matches for regular expression
-ctrl+alt+e - shows current line as when passed through alias, history and shell expansion
-ctrl+x, ctrl+e - edit command in editor
-ctrl+p - show last command (same as up arrow)
+Keys when in emacs mode. You can switch to `vi` mode with `set -o vi` command.
+Ctrl C — Interrupt, erase line
+Ctrl A — Go to beginning of line
+Ctrl E — End of line
+Ctrl U — Copy line
+Ctrl Y — Paste line
+Alt . — Last argument
+Ctrl R — Search trough history
+Alt * — Show all matches for regular expression
+Ctrl+Alt E — Show current line passed through alias, history and shell expansion
+Ctrl X, Ctrl E — Edit command in editor
+Ctrl P — Show last command (same as up arrow)
+
 
 
 ###############################
@@ -65,868 +84,977 @@ ctrl+p - show last command (same as up arrow)
 PACKAGES:
 ========
 
-dpkg -l - lists installed packages
-    -i <package> (sudo) - install package from a package file 
-apt - 'skin' for dpkg
-apt-get - top level package manager
-        --yes - answer with 'yes' to most questions (except the ones that can have potentialy harmful consequeces)
-        --force-yes - answer 'yes to all questions (not recommended)
-        update - update local list of existing packages
-        -u dist-upgrade - upgrade (to regularly update put in crontab: apt-get update && apt-get -u dist-upgrade). it will intellingently handle changing dependencies with new wersions of packages
-        upgrade - same as dist-upgrade, but will not remove installed packages or install new ones.
-        install <package> - also update single package
-        autoremove - remove unneeded packages
-        remove <package> - remove package, leave configurations
-        remove apt-listchanges - useful when debian cant find package
-        purge <package> - remove package and its configurations, run apt-get autoremove after, to remove all dependencies that are not needed anymore.
-        source <package> - download code
-        build-dep <package> - install the build dependencies
-apt-cache   search <keyword> - search packages, like apropos, but global
-        show <package>  - get info about package (verdion, dependencies, ...)
-        showpkg <package> - similar, shows also reverse dependencies
-        policy <package> - show installed and remote version
-apt-file search - enables searching packages by file
-        update - updates local list of existing packages
-aptitude - browse packages (skin for apt-get)
-        search '~i!~M' - list installed packages, that were not installed as a dependency, with short description.
-        search <package> - search for package
-winetricks - install wine applications
-update-alternatives - maintain symbolic links determining default commands
+dpkg — Low level package manager for Debian.
+    -l — Lists installed packages.
+    -i <package> (sudo) — Installs package from a package file.
+apt-get — Advanced Package Tool built on top of `dpkg`. New command called 
+        simply `apt` is also available. It merges the functionalities of 
+        `apt-get` and `apt-cache`.
+    update — Updates local list of existing packages.
+    -u dist-upgrade — Upgrades by intelligently handling changing dependencies 
+            with new versions of packages. To regularly update put this line 
+            in `crontab`:  
+            `apt-get update && apt-get -u dist-upgrade`. 
+    upgrade — Same as dist-upgrade, but will not remove installed packages or 
+            install new ones.
+    install <package> — Also updates single package.
+    remove <package> — Removes package but leaves its configurations.
+    remove apt-listchanges — Useful when Debian can't find a package.
+    purge <package> — Removes package and its configurations. Run `apt-get 
+            autoremove` after to remove all dependencies that are not needed 
+            anymore.
+    autoremove — Removes unneeded packages.
+    source <package> — Downloads code.
+    build-dep <package> — Installs the build dependencies.
+    --yes — Answers with 'yes' to most questions (Except the ones that can have
+            potentially harmful consequences).
+    --force-yes — Answers 'yes' to all questions (Not recommended).
+apt-cache — Queries the APT's internal database. 
+    search <keyword> — Searches packages like `apropos`, but globally.
+    show <package> — Shows package info like version, dependencies, etc.
+    showpkg <package> — Similar, but also shows the packages that depend on the
+            searched package (reverse dependencies).
+    policy <package> — Shows installed and remote version.
+apt-file — APT package searching utility.
+    search <file> — Search in which package a file is included.
+    update — Updates local list of package contents.
+aptitude — Enables package browsing (skin for apt-get).
+    search '~i!~M' — Lists installed packages that were not installed as a 
+            dependency, with short description of each.
+    search <package> — Package search.
 
-unattended-upgrade - automatic installation of upgrades
+winetricks — Installs wine applications.
+update-alternatives — Maintains symbolic links determining default commands.
+unattended-upgrade — Automatic installation of security upgrades.
 
-apropos - search the manual page names and descriptions (use quotes for phrases)
-    -a - all keywords
-whatis - short description of app
-whereis - locates where command resides 
-which - similar only executable
-wtf - looks up filename suffixes database
+
+COMMANDS:
+apropos <cmd> — Searches the manual page names and descriptions (use quotes 
+        for phrases).
+    -a — Matches all keywords.
+whatis <cmd> — Displays one-line manual page description.
+whereis <cmd> — Locates the binary, source, and manual page files for a 
+        command.
+which <cmd> — Locates only the binary of a command.
+wtf — Translates acronyms and filename suffixes.
+
 
 INSTALL MANTRA:
-
+```shell
 ./configure --help
 ./configure
 make
 sudo make install
+```
 
 =======
 GENERAL:
 =======
 
-su - - switch to root
-su - <user> - switch to user
-man [<section-number>] <command> - Section numbers: 1 programs, 2 system calls, 3 library calls, 4 special files, 5 file formats, 7 miscellaneous, 8 system administration commands
-echo -n - no newline at the end
-     -e - enable interpretation of backslashed letters
-xargs - output from one command to arguments of another
-    -t - echoes the command before executing it, and 
-    -p - echoes it and asks for confirmation
-tee - Sends output of a program to a file and to a standard output
-     /dev/tty - Sends output to terminal and to standard output
-expr - evaluate expressions (expr 1 + 1 -> 2)
-bc - calculator: echo 1+1 | bc -> 2
-    for floating point operations use: echo "scale=5;3/4" | bc -> .75000
-sh - run command interpreter (shell). Can run script even if not executable.
-    -c '<commands>' - start new noninteractive shell and read commands from arguments instead of stdin
-bash - run bash command interpreter (shell)
-    -c - read commands from arguments instead of stdin
-    -n <script> - check script for errors
-    -x - oputputs lines before execution, good for debuging
-sudo sh -c 'echo "bla bla bla" >> <file>' - append lines to system configuration file (sudo write)
-gcc - gnu c compiler
-    -w - supress warnings (only print errors) 
-    -a shows all sections
-run-parts - run all scripts or programs in a directory
-date - tells you date and time, also can set
-    -s <string> - set date
-    +%T -s "10:13:13" - set time
-timedatectl set-timezone CET - sets timezone
-cal - calendar
-xclip - copies to clipboard
-mkfifo <pipe> - creates named pipe during that shell session.
-mkisofs - create a DVD/CD image 
-genisoimage - create a DVD/CD image (debian)
-cdrecord - write to a CD/DVD
-acpi - check battery
-fdisk -l (sudo) - show partitions 
-shutdown now - take you to single user mode
-    -h now -  begins the shutdown procedure (OR halt OR poweroff)
-    -h 11:50 - when
-    -r now - reboot (OR reboot)
-make -q - do not run any commands, just return 0 exit status if everything is up to date or nonzero otherwise
-    -B - unconditionaly make all targets
+su — Switches user.
+    - <user> — Switches to user.
+    - — Switches to root.
+man — Help on commands.
+    <section> — Section numbers: 1. Programs, 2. System calls, 3. Library calls,
+            4. Special files, 5. File formats, 7. Miscellaneous, 8. System 
+            administration commands
+echo — Prints passed text.
+    -n — Does not add newline at the end.
+    -e — Enables interpretation of backslashed letters.
+xargs <cmd> — Passes output from one command to arguments of another:  
+        `echo -a | xargs ls`
+    -t — Echoes the command before executing it. 
+    -p — Echoes command and asks for confirmation before execution.
+    -0 — Input items are separated by null character instead of space.
+tee <file> — Sends output of a program to specified file and to standard 
+        output:  
+        `<cmd_1> | tee out_1.txt | <cmd_2>`
+    /dev/tty — Sends output to terminal and to standard output
+expr — Evaluates passed expression.
+    1 + 1 — Prints `2`.
+bc — Evaluates input. It's basically a calculator, but also provides some 
+        control commands.
+    echo 1 + 1 | bc — Prints `2`.
+    echo "scale=5;3/4" | bc — Prints `.75000`.
+sh — Runs command interpreter (shell). Can run a script even if not executable.
+    -c '<commands>' — Starts new non-interactive shell and reads commands from 
+        arguments instead of `stdin`.  
+        To append lines to system configuration file run:  
+        `sudo sh -c 'echo "<text>" >> <file>'`
+bash — Runs bash command interpreter (shell).
+    -c — Reads commands from arguments instead of `stdin`.
+    -n <script> — Checks script for errors.
+    -x — Prints commands before execution. Useful for debugging.
+gcc — Gnu C compiler. Run `g++` for C++ code.
+    -w — Supresses warnings (Only prints errors).
+    -Wall — All warnings.
+    -g — Compile for debugging.
+    -std=<std> — Sets the standard. Suported standards for C are:  
+        `c90`, `gnu90`, `c99`, `gnu99`, `c11` and `gnu11`.  
+        Suported standarts for C++ are:  
+        `c++98`, `gnu++98`, `c++11` and `gnu++11`.  
+        `gnu90` and `gnu++98` are the default options.
+    -O<level> — Optimization level. `0`: Reduce compilation time (default),
+        `1-3`: - Level of optimization, `s` - Optimize for size, `g` - Optimize
+        debugging experience.
+run-parts <dir> — Runs all scripts or programs in a directory.
+date — Tells and sets date and time.
+    -s <string> — Sets date.
+    +%T -s "10:13:13" — Sets time.
+timedatectl — Controls the system time and date.
+    set-timezone CET — Sets timezone.
+cal — Calendar
+xclip — Copies to clipboard.
+mkfifo <pipe> — Creates named pipe during that shell session.
+mkisofs — Creates a DVD/CD image.
+genisoimage — Creates a DVD/CD image (Debian).
+cdrecord — Writes to a CD/DVD.
+acpi — Checks battery.
+fdisk -l (sudo) — Shows partitions. 
+shutdown — Closes down the system at a given time.
+    now — Takes you to the single user mode.
+    -h now — Begins the shutdown procedure, same as `halt` and `poweroff`.
+    -h 11:50 — At 11:50.
+    -r now — Same as `reboot`.
+make — Utility that maintains groups of programs.
+    -q — Doesn't run any commands, just returns `0` exit code if everything is
+            up to date or non-zero otherwise.
+    -B — Unconditionally makes all targets.
+
 
 FILES:
-ls  -d - list directory names instead of contents
-    -S - sort by size 
-    -t - sort by time
-    -1 - one file per line
-    ./* - ls one level deep
-    -i - get inode number of file (file id). Use sudo find / -inum <number> to find all links that point to same file.
-rm -f - force remove (do not prompt)
-mkdir -p - make parents if needed
-cp -R - copy recursively
-    --preserve - copy and preserve mode, ownership and timestams
-ln - makes links to the files
-    -s <file> <link> - makes symbolic link. If you want to use relative paths you must be in links directory !!!!!!!!!!!!!!!!!!!!!!
-df - disc fullness / disc free
-du -s <folder> - folder size
-mc - midnight commander
-    alt o - open parent dir in another panel
-    ctrl o - switch to bash
-find <dir> -name <file> - search by name
-    -regex <regex> - use regex for name search
-    -not - insert before other options to negate
-    -maxdepth <levels> - descend only to levels deep
-    -samefile <file> - find all hard links of a file
-    -xdev - don't descend directories on other filesystems
-    -inum <inum> - find files with the inode number
-    -type <f|...> - find files of type
-    -delete - delete found files
-    -exec <command> {} \; - find files and execute command for every found file. {} is replaced with filename
-    -exec <command> {} + - find files and execute command with all filenames in place of {}
-    -atime +/-n - find files that were last acessed less or more than n days.
-locate <word>  - same as find but using index
-updatedb (sudo) - update database for locate 
-locate -0 | xargs -0 - uses NUL character as separator, necessary for filenames with spaces 
-md5sum - checks md5 sum hash
-read - read single line from standard input 
-  -n 1 - print after reading one character
-  -s - do not echo input comming from terminal
-shred - securely remove files
-file <file> - determine file type
-tree - ls in a tree-like (hierarchical) format
-install - copy files and set attributes
-gpg <file> - decrypt file with password
-    -c <file> - encrypt
-mktemp - create a temporary file or directory in /tmp and returns it's name.
-rename s/<from>/<to> <files> - renames multiple files using sed syntax
-rsync - a fast, versatile, remote (and local) file-copying tool
-        -Hbaz -e ssh <src-dir> <usrnm>@<host>:<dest-dir> - backs up the src-dircmp - compares two files, similar to diff but also for binaries
-stat -c%X <file> - time of last modification of the file 
-readlink -f - follow link recursively and print files path
-xdg-open <file> - open file with default aplication for the file type
-dialog - display dialog box from shell script
-watch - execute command periodically
+ls  -d — List directory names instead of contents
+    -S — Sort by size 
+    -t — Sort by time
+    -1 — One file per line
+    ./* — Ls one level deep
+    -i — Get inode number of file (file id). Use `sudo find / -inum <number>` to find all links that point to same file.
+cp  -i — Interactive (Prompts before overwrite)
+    -v — Verbose (Explains what is being done)
+    -R — Copy directories recursively
+    -p — Preserve mode, ownership and timestamps
+    --preserve=all — Also preserves context, links and xattr
+rm  -i — Interactive (Prompts before every removal)
+    -v — Verbose (Explains what is being done)
+    -f — Force remove (Does not prompt, useful if `rm` is aliased with `-i`)
+    -R — Removes directories and their content recursively 
+mkdir  -p — Make parents if needed
+ln — Makes links to the files
+    -s <file> <link> — Makes symbolic link. If you want to use relative paths you must be in links directory !!!!!!!!!!!!!!!!!!!!!!
+df  -h — Displays humanly readable free disk space
+du  -s <dir> — Directory size
+mc — Midnight commander
+    Alt o — Open parent dir in another panel
+    Ctrl o — Switch to bash
+find <dir>  -name <file> — Search by name
+    -regex <regex> — Use regex for name search
+    -not — Insert before other options to negate
+    -maxdepth <levels> — Descend only to levels deep
+    -samefile <file> — Find all hard links of a file
+    -xdev — Don't descend directories on other filesystems
+    -inum <inum> — Find files with the inode number
+    -type <f|d|b|...> — Find files of type
+    -delete — Delete found files
+    -exec <cmd> {} \; — Find files and execute command for every found file. `{}` is replaced with filename
+    -exec <cmd> {} + — Find files and execute command with all filenames in place of `{}`
+    -atime +/-n — Find files that were last accessed less or more than n days.
+    -print0 | xargs -0 <cmd> — Sends found files to a command as parameters. Uses `NUL` character as separator, necessary for filenames with spaces 
+locate <regex>  — Similar as `find` but using index
+    -i — Ignore case
+    --regex — Interprets all patterns as extended regex
+    -0 | xargs -0 <cmd> — Sends found files to a command as parameters.
+updatedb (sudo) — Update locate index 
+md5sum — Prints md5 sum hash of a file
+read — Read single line from standard input 
+  -n 1 — Print after reading one character
+  -s — Do not echo input coming from terminal
+shred — Securely remove files
+file — Determine file's type
+tree — Ls in a tree-like (hierarchical) format
+install — Copy files and set attributes
+gpg — Decrypt file with password
+    -c — Encrypt
+mktemp — Create a temporary file or directory in `/tmp` and returns it's name.
+rename  s/<from>/<to> <files> — Renames multiple files using `sed` syntax
+rsync — A fast, versatile, remote (and local) file-copying tool
+        -Hbaz -e ssh — `<src_dir> <user>@<host>:<dest_dir>` - Backs up the 'src-dir':
+        `-H` preserves hard links, `-b` renames preexisting destination files (back up), `-a` preserve everything except hard links and `-z` compresses.
+        cmp — Compares two files, similar to diff but also for binaries
+stat — Displays files status
+    -c%X — Time of last modification of the file 
+readlink  -f — Follow link recursively and print files path
+xdg-open — Open file with default application for the file type
+dialog — Display dialog box from shell script
+watch — Execute command periodically
 
 
 ARCHIVES:
-tar xvzf <file>.tar.gz (.tgz) - decompress and detar
-    xvjf <file>.tar.bz2 - decompress and detar
-    -cf <archive>.tar <file>... - compress
-zip -g <archive> <file> - grow/add to existing archive
-unzip \*.zip - backslash is necessary so that bash doesn't expand the * 
-    -d <dir> - extract into directory (create if doesent exist)
-unrar e - extract files from rar archives
-zcat - catz gziped file
+dtrx  <archive> — Universal archive extractor
+tar — xvzf <file>.tar.gz (.tgz) — Decompress and detar
+    xvjf <file>.tar.bz2 — Decompress and detar
+    -cf <archive>.tar <files> — Compress
+unzip  \*.zip — Backslash is necessary so that bash doesn't expand the `*`
+    -d <dir> — Extract into directory (create if doesn't exist)
+zip  -r <archive> <dir> — Compress whole directory recursively.
+    -g <archive> <files> — Add files to existing archive (grow).
+unrar  e — Extract files from rar archive
+zcat — Cats gziped file
+
 
 TERMINAL MULTIPLEXERS:
-screen - switch between multiple virtual terminals (useful in ssh)
-    ctrl+a: 
-    c - new terminal, 
-    n - next, 
-    p - previous, 
-    a - go to beginning of line,
-    | - new region vertically,
-    S - new region horizontally,
-    tab - move to next region,
-    Q - close all but selected region,
-    X - kill the current region,
-    esc - enter copy/scrollback mode -> space: start/stop marking,
-    ] - paste,
-    k - kill window,
-    t - show time and avg cpu load
-tmux - terminal multiplexer, better screen. 
-    ls - shows running sessions
-    attach [-t <session no>] - attach to running session
-    ctrl+b: 
-    d - detach from currently attached session  
-    pgup - enter in copy mode and pageup, 
-    [ - copy mode, 
-    ] - paste,  
-    " - split horizontally, 
-    % - split vertically 
+screen — Switch between multiple virtual terminals (useful in ssh). Prefix for
+    a command is `Ctrl a`.
+    c — New terminal, 
+    n — Next, 
+    p — Previous, 
+    a — Go to beginning of line,
+    | — New region vertically,
+    S — New region horizontally,
+    tab — Move to next region,
+    Q — Close all but selected region,
+    X — Kill the current region,
+    esc — Enter copy/scrollback mode -> space: start/stop marking,
+    ] — Paste,
+    k — Kill window,
+    t — Show time and avg CPU load
+tmux — Terminal multiplexer, better screen. Prefix for a command is `Ctrl b`. 
+    Most commands are the same as in `screen`.
+    ls — Shows running sessions
+    attach [-t <no>] — Attach to running session
+    d — Detach from currently attached session  
+    pgup — Enter in copy mode and pageup, 
+    [ — Copy mode, 
+    ] — Paste,  
+    " — Split horizontally, 
+    % — Split vertically 
+
 
 ====
 BASH:
 ====
 
-"$x" - ALWAYS PUT DOUBLE QUOTES AROUND VARIABLE!!!!!!!!!!!!!!! 
-       All variables in bash are global !!!!!!!
-"$*" - Combines all the arguments into single word, separating them with first character of IFS variable. If IFS is not set, space is used. If IFS is null, no separator is used!!!!!!!!! No args provided will result in one empty string being passed on!!! 
-"$@" - Use this instead!!!!! Will retain arguments as-is, so no args provided will result in no args being passed on. This is in most cases what you want to use for passing on arguments.
+"$x" — ALWAYS PUT DOUBLE QUOTES AROUND VARIABLE!!!!!!!!!!!!!!! 
+       All variables in bash are global!!!!!!!
+"$*" — Combines all the arguments into single word, separating them with first character of IFS variable. If IFS is not set, space is used. If IFS is null, no separator is used!!!!!!!!! No args provided will result in one empty string being passed on!!! 
+"$@" — Use this instead!!!!! Will retain arguments as-is, so no args provided will result in no args being passed on. This is in most cases what you want to use for passing on arguments.
     Google: "$@" is right almost everytime, and $* is wrong almost everytime.
-"$#" - number of arguments
-"$1" - first argument
-"$0" - name of the script
-$'\n' - string literal with escape seqences (there is a backslash before n)
-    If you want IFS to be a new line (useful with for loop) you need to: IFS=$'\n' - the dollar forces substitution!!!!!
+"$#" — Number of arguments
+"$1" — First argument
+"$0" — Name of the script
+$'\n' — String literal with escape sequences (there is a backslash before n)
+    If you want IFS to be a new line (useful with for loop) you need to: `IFS=$'\n'` - The dollar forces substitution!!!!!
     Also if you want 'while read line; do...' to preserve leading spaces and tabs, you need to set IFS=""
-$? - exit code of last command (0 - sucess)
-Ctrl-Z, kill %% - kill looping bash script
+$? — Exit code of last command (0 - Success)
+Ctrl-Z, kill %% — Kill looping bash script
 
-test <expr> - same as [ <expression> ], returns zero exit status if true.
-    -n - is string non empty, 
-    -z - is string empty, 
-    -a - and, 
-    -o - or,
-    = - strings are equal, 
-    -nt - file newer than, 
-    -ot - older then,
-    -d - directory exists, 
-    -e - file exists, 
-    -f - is a regular file,
-    -h - its a symbolic link, 
-    -r - has read permission,
-    -w - has write permission, 
-    -x - has execute permission
-[[ <expr> ]] - same as [, but without word splitting and filename expansion. And with additional operators: &&, ||, <, > (lexicographic less, more), and also regular expression matching.
-=~ - regex comparison operator: [[ "$HOST" =~ ^user.* ]]
-let <expr> - executes expression: let a="$b"+2
+test <expr> — Same as `[ <expr> ]`. Returns zero exit status if true.
+    -n — Is string non empty
+    -z — Is string empty
+    -a — And
+    -o — Or
+    = — Strings are equal
+    -nt — File newer than
+    -ot — Older then
+    -d — Directory exists
+    -e — File exists
+    -f — Is a regular file
+    -h — Its a symbolic link
+    -r — Has read permission
+    -w — Has write permission
+    -x — Has execute permission
+[[ <expr> ]] — Same as `[`, but without word splitting and filename expansion. And with additional operators: `&&`, `||`, `<`, `>` (lexicographic less, more), and also regular expression matching.
+=~ — Regex comparison operator: `[[ "$HOST" =~ ^user.* ]]`
+let <expr> — Executes expression: let a="$b"+2
 
-$(command) - same as `command`, but more readable!
-eval <variable> - execute string as command
-$RANDOM - 0 - 32767
-input=`cat` - getting standard input
-- - in place of a file name means standard in or out
-set -o vi - set line editing to vi mode
-pushd . - put current dir on stack
-popd - pop dir from stack
-cd - - go to last dir
-source <script> - run script: for example source /etc/profile (same as . <command>)
-#!/bin/bash - good practice to insert at begining of a bash script
-export  PATH="$PATH:<dir>" - add new directory to path variable
-read -p "Press [Enter] key to start backup..." - prompt for user input
-var=${1:-"<default-value>"} - setting variable with default value if $1 is empty
-getopts - parse parameters/arguments, builtin
-getopt - GNU version is even better then getopts, not a builtin
-while read line; do <commands>; done < <file> - read from file line by line
-    -r - do not treat backslashes as escape characters
-complete -F <completion-function> <command> - set completion function for command
-complete -p <command> - print the completion function for command
-compgen -c <pattern> - print all completions for pattern
-help <builtin> - display information about builtin command
-wait - wait for all background processes to end
+$(command) — Same as `command`
+eval <variable> — Execute string as command
+$RANDOM — 0 - 32767
+input=`cat` — Getting standard input
+- — In place of a file name means standard in or out
+set -o vi — Set line editing to vi mode
+pushd . — Put current dir on stack
+popd — Pop dir from stack
+cd - — go to last dir
+source <script> — Run script: for example source /etc/profile (same as . <cmd>)
+#!/bin/bash — Good practice to insert at beginning of a bash script
+export  PATH="$PATH:<dir>" — Adds new directory to path environment variable.
+read  -p <message> — Prompt for user input
+var=${1:-"<default>"} — Setting variable with default value if $1 is empty
+getopts — Parse parameters/arguments, builtin
+getopt — GNU version is even better then getopts, not a builtin
+while read line; do <commands>; done < <file> — Read from file line by line
+    -r — Do not treat backslashes as escape characters
+complete -F <completion_function> <cmd> — Set completion function for command
+complete -p <cmd> — Print the completion function for command
+compgen -c <pattern> — Print all completions for pattern
+help <builtin> — Display information about builtin command
+wait — Wait for all background processes to end
+
 
 SAFETY:
-set -e - exit if any command fails
-    -u - exit if referencing undefined variable
-    -o pipefail - if any command in a pipeline fails, its return code is used as the return code of the whole pipeline
-IFS=$'\n\t' - remove space from the default Internal Field Separator
+set — -e — Exit if any command fails
+    -u — Exit if referencing undefined variable
+    -o pipefail — If any command in a pipeline fails, its return code is used as the return code of the whole pipeline
+IFS=$'\n\t' — Remove space from the default Internal Field Separator
+
 
 HISTORY:
+sudo !! — Run the last command as root 
+␣<cmd> — Execute a command without saving it in the history
+!<cmd> — Run last command that starts with cmd
 
-sudo !! - run the last command as root 
-<space>command - execute a command without saving it in the history
-!<term> - last command that starts with term
 
 REDIRECTIONS:
+<cmd> 2> /dev/null — Redirect error output to `null`
+<cmd> &> /dev/null — Redirect both standard and error output to `null`
+<cmd> >&2 — Write to stderr
+<cmd> 2>&1 | less — Add stderr to stdout and print it with less (useful for gcc)
 
-<command> 2> /dev/null - redirect error output
-<command> &> /dev/null - redirect both standard and error output
-<command> >&2 - write to stderr
-<command> 2>&1 | less - add stderr to stdout and print it with less (useful for gcc)
 
 ARRAYS AND LINES:
+Reads line by line from variable. To preserve spaces use `IFS=`.
 
 while IFS= read -r line; do
     echo "... $line ..."
-done <<< "$list" - reading line by line from variable, use IFS= to preserve spaces
-${a[1]} - value of the second element of the array
-for c in ${a[@]} - iterate over array
-${varname:offset:length} - get substring: s="aeiou"; ${s:3:1} -> o
-${#var} - length of a var 
-${#name[subscript]} - length  of the element
-${#name[@]} - length  of the array
+done <<< "$list" — 
+
+
+${a[1]} — Value of the second element of the array
+for c in ${a[@]} — Iterate over array
+${varname:offset:length} — Get substring: `s="aeiou"; ${s:3:1} -> o`
+${#var} — Length of a var 
+${#name[subscript]} — Length  of the element
+${#name[@]} — Length  of the array
+
 
 ALIASES AND FUNCTIONS:
-
-alias - print all aliases
-    <name> - print alias
-    <name>='cmd' - set alias
-command <command> - executes original command, bypassing any aliases or shell functions that may be defined for command
-\<command> - temporarily disable alias (call original)
-type <command> - will tell you what is command aliased to or if it is a biltin, function or a command
+alias — Print all aliases
+    <name> — Print alias
+    <name>='cmd' — Set alias
+command <cmd> — Executes original command, bypassing any aliases or shell functions that may be defined for command
+\<cmd> — Temporarily disable alias (call original)
+type <cmd> — Will tell you what is command aliased to or if it is a builtin, function or a command
     -P just check commands
-declare -F - print function names
-declare -f - print functions
+declare -F — Print function names
+declare -f — Print functions
+
 
 ====
 TEXT:
 ====
 
 PRINT:
-head -n-<number-of-lines> - print all lines but the last n
-    -c <num-of-char> - print first c characters
-tail -n+<line-number> - start at line number
-    -f - do not stop printing (follow)
-cat -n - number all lines
-    -nl - similar
-    >> file - simplest text editor (great for pasting)
-less    &<phrase> - display only lines with
-        -N - show line numbers
-        -~ - do not show ~ after EOF
-        +G - tells less to start at the end of the file
-                +F - follow the input (to scroll up first press ctrl+c)
-        -F - or --quit-if-one-screen
-        v - opens editor defined in $VISUAL or $EDITOR
-        :n - examine the next file
-        <,> - go to home, end
-wc - count lines, words and characters
+head — -n-<num_of_lines> — Print all lines but the last n
+    -c <num_of_chars> — Print first c characters
+tail — -n+<line_num> — Start at line number
+    -f — Do not stop printing (follow)
+cat — -n — Number all lines
+    >> file — Simplest text editor (great for pasting)
+less  &<patt> — Display only lines with pattern
+    -N — Show line numbers
+    -~ — Do not show `~` after `EOF`
+    +G — Tells less to start at the end of the file
+    +F — Follow the input (to scroll up first press ctrl+c)
+    -F — Or --quit-if-one-screen
+    v — Opens editor defined in `$VISUAL` or `$EDITOR`
+    :n — Examine the next file
+    <, > — Go to home, end
+wc — Count lines, words and characters
+
 
 EDIT:
-sudo -e <file> - edit file as sudo
-tr <from> <to> - translate or delete characters (-d for delete)
-cut <filename> - remove sections from each line of files
-        -d ':' -f 1,7 /etc/passwd - only show the username and the shell
-sort - sorts lines
-    -u - uniq, deletes duplicates
-    -t - set delimiter for fields (default is space)
-    -k - select by which field to sort 
-uniq - removes adjacent duplicates
-    -d - intersection
-    -u - difference
-column - columnate text
-    t - create a table
-shuf - shuffle input lines
-tac - concatenate and print files in reverse (reverse cat)
-join - join lines of two files on a common field
-colrm <from <to>> - removes columns
-seq <number> - output numbers from 1 to number
-ispell/aspell - interactive spell checker
-basename [-s .suffix] <path> - strip directory from path
-        -s <.suffix> - also strip suffix
-        -a - process multiple filenames
-dirname <path> - strip last component from path
-fmt - produce roughly uniform line lengths
-fold - wrap each input line to fit in specified width
-paste - glue two documents side by side
-sed 's///g' - substitute every occurrence in line, not just the first one
-    's///I' - ignore case
-    -r - extended syntax, for +, ?,... , also you shouldn't escape the parenthesis
-    -r 's###e' - execute match as a command
-    -i <file> - will make changes directly to the file (in place)
-    -u - unbuffered mode (processes input immediately)
-        -n l - print escape sequence (keycode) of a pressed key
-expand - convert tabs to spaces
-    -t <number> - set number of spaces (default is 8)
-    -i - do not convert tabs after non blanks
+sudo -e <file> — Edit file as sudo
+tr <from> <to> — Translate characters
+    -d — Delete characters
+cut <file> — Removes columns from each line of files
+    -d ':' -f 1,7 /etc/passwd — Only show the username and the shell
+sort — Sorts lines
+    -u — Uniq, removes duplicates
+    -t — Set delimiter for fields (default is space)
+    -k — Select by which field to sort 
+uniq — Removes adjacent duplicates
+    -c — Count
+    -d — Intersection
+    -u — Difference
+column — Columnate text
+    -t — Create a table
+shuf — Shuffle input lines
+tac — Concatenate and print files in reverse (reverse `cat`)
+join — Join lines of two files on a common field
+colrm  [from [to]] — Removes columns
+seq <number> — Output numbers from 1 to number
+ispell, aspell — Interactive spell checker
+basename <path> — Strips directory from path
+    -s .<suffix> — Also strip suffix
+    -a — Process multiple filenames
+dirname <path> — Strip last component from path
+fmt — Produce roughly uniform line lengths
+fold — Wrap each input line to fit in specified width
+paste — Glue two documents side by side
+sed — 's///g' — Substitute every occurrence in line, not just the first one
+    's///I' — Ignore case
+    -r — Extended syntax, for `+`, `?`, ... Also you shouldn't escape the parenthesis
+    -r 's###e' — Execute match as a command
+    -i <file> — Will make changes directly to the file (in place)
+    -u — Unbuffered mode (processes input immediately)
+        -n l — Print escape sequence (keycode) of a pressed key
+expand — Convert tabs to spaces
+    -t <number> — Set number of spaces (default is 8)
+    -i — Do not convert tabs after non blanks
+
 
 DIFF:
-diff -u <files> - unified format
-diff --brief -r - commpare two directory trees
-colordiff - version of diff with colors
-sdiff - two files side by side
-comm - compare two sorted files line by line
-patch - apply a diff file to original
-    patch < patch.diff - apply patch
-    diff -u <old-file> <new-file> > patch.diff - create patch
+diff — -u <files> — Unified format
+    --brief -r — Compare two directory trees
+colordiff — Version of diff with colors
+sdiff — Two files side by side
+comm — Compare two sorted files line by line
+patch — Apply a diff file to original
+    patch < patch.diff — Apply patch
+    diff -u <old_file> <new_file> > patch.diff — Create patch
+
 
 SEARCH:
-grep -v - inverse
-    -n - line numbers 
-    -w - whole word 
-    -A<x> | -B<x> - x lines after or before
-    -r - recursive 
-    -o, --only-matching - print only matching part
-    -P - perl notation (if you need \\t, + or .*? [? meaning non greedy]!!!!) 
-    -i - ignore case 
-    -I - do not process binary files 
-    -l - just print files with matches 
-    -L - just print files wihouth matches
-    -e <pattern> - specify pattern (needed if it starts with -!!!!!!!)
-    | wc -l - count occurrences
-    --line-buffered - processes input line by line instead of in bigger chunks
-look - display lines beginning with a given string
-strings - print all text parts of binary file
+grep <patt> <file> — -v — Inverse
+    -n — Line numbers 
+    -w — Whole word 
+    -A<num> — Print also num lines after
+    -B<num> — Print also num lines before
+    -r — Recursive 
+    -o — Print only matching part
+    -P — Perl notation with additional operators such as: `\\t`, `+` and `?` (non-greedy!!!!).
+    -i — Ignore case 
+    -I — Do not process binary files 
+    -l — Just print files with matches 
+    -L — Just print files without matches
+    -e <patt> — Necessary to put before pattern if it starts with `-`!!!!!!! or if you want multiple patterns.
+    | wc -l — Count occurrences
+    --line-buffered — Processes input line by line instead of in bigger chunks
+look — Display lines beginning with a given string
+strings — Print all text parts of binary file
+
 
 CONVERT:
-todos/fromdos - convet line endings form/to windows format (package tofrodos)
-enscript - converts text files to postscript, rtf, HTML
-gs - ghostscript: postscript and PDF language interpreter and previewer
-pdftohtml - pdf to html
-pdftotext - pdf to text
-libreoffice - new openoffice
-figlet - display large characters made up of ordinary screen characters (ascii art)
-toilet - similar (ascii art)
-cproto - generates C function prototypes (declarations)
+todos, fromdos — Convert line endings form/to windows format (package tofrodos)
+enscript — Converts text files to postscript, rtf, HTML
+gs — Ghostscript: postscript and PDF language interpreter and previewer
+pdftohtml — Pdf to html
+pdftotext — Pdf to text
+libreoffice — New Openoffice
+figlet — Display large characters made up of ordinary screen characters (Ascii art)
+toilet — Similar (Ascii art)
+cproto — Generates C function prototypes (declarations)
+
 
 EDITORS:
-nano - /etc/nanorc > nano config
-        /usr/share/nano/LANGUAGE.nanorc > syntax highlights
-        alt + / or ? > go to last line
-fte - cool text editor with CUA (IBM)-shortcuts
-diakonos - simple terminal text editor with ctrl-c for copy
-pyroom - distraction free writing (gui)
+nano — Simple text editor.
+    /etc/nanorc — Config file.
+    /usr/share/nano/<lang>.nanorc — Syntax highlight files.
+    Alt + / or ? — Go to last line.
+fte — Cool text editor with CUA (IBM)-shortcuts
+diakonos — Simple terminal text editor with ctrl-c for copy
+pyroom — Distraction free writing (gui)
+
 
 =======
 NETWORK:
 =======
 
-whois - info about domain
-host <ip/hostname> - DNS lookup utility
-nslookup - same interactively
-dig - same, lot of options
-hostname - prints/sets computer name, to set it permanently edit /etc/hostname and /etc/hosts
-netstat - displays contents of /proc/net files,  status of ports...
-    -r - show routing table
-    -i - show interfaces
-arp - manipulate the system ARP cache (IP -> mac)
-route - tool used to display or modify the routing table
-    add default gw 192.168.1.10 - change the default gateway
-    should DNS not be configured correctly on your machine, you need to edit "/etc/resolv.conf" to make things work
-ifconfig eth0   down/up (sudo) - turn network interface on/off 
-    192.168.1.4 netmask 255.255.255.0 up - set ip and mask
-ifup eth0 - Will bring eth0 up if it is currently down.
-ip  link show - list network interfaces
-    link set dev eth0 up - bring interface eth0 up or down
-    addr show - list addresses of interfaces
-    route add default via 1.2.3.254 - set default gateway
-traceroute, traceroute6, traceroute6.iputils - traces route
-tracepath, tracepath6 - similar (iputils package)
-mtr - combines the functionality of the traceroute and ping
-findsmb - list info about machines that respond to SMB name queries - windows based machines sharing their hard disks
-/etc/services - list of internet services with their port numbers
-NetworkManager - network management daemon, configuration file is in /etc/NetworkManager/NetworkManager.conf 
-nm-tool - prints info 
-nm-online - is network connected 
-nmcli - command-line tool for controlling NetworkManager
-nc - (netcat) It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning...
-ncat - Concatenate and redirect sockets
-ethtool eth0 - show status of eth0
-    -S - statistics
-    -s - change settings (speed, duplex,...)
-ss -tupl - list internet services on a system
-    -tuo - list active connections to/from system
+whois — Info about domain
+host <ip/hostname> — DNS lookup utility
+nslookup — Same interactively
+dig — Same, lot of options
+hostname — Prints/sets computer name, to set it permanently edit `/etc/hostname` and `/etc/hosts`
+netstat — Displays contents of /proc/net files,  status of ports...
+    -r — Show routing table
+    -i — Show interfaces
+arp — Manipulate the system ARP cache (IP -> mac)
+route — Tool used to display or modify the routing table
+    add default gw <ip> — Change the default gateway
+    should DNS not be configured correctly on your machine, you need to edit `/etc/resolv.conf` to make things work
+ifconfig eth0   down/up (sudo) — Turn network interface on/off 
+    <ip> netmask <mask> up — Set ip and mask
+ifup eth0 — Will bring eth0 up if it is currently down.
+ip  link show — List network interfaces
+    link set dev eth0 up — Bring interface eth0 up or down
+    addr show — List addresses of interfaces
+    route add default via <ip> — Set default gateway
+traceroute, traceroute6, traceroute6.iputils — Traces route
+tracepath, tracepath6 — Similar (iputils package)
+mtr — Combines the functionality of the traceroute and ping
+findsmb — List info about machines that respond to SMB name queries - Windows based machines sharing their hard disks
+/etc/services — List of internet services with their port numbers
+NetworkManager — Network management daemon, configuration file is in /etc/NetworkManager/NetworkManager.conf 
+nm-tool — Prints info 
+nm-online — Is network connected 
+nmcli — Command-line tool for controlling NetworkManager
+nc — (netcat) It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning...
+ncat — Concatenate and redirect sockets
+ethtool eth0 — Show status of eth0
+    -S — Statistics
+    -s — Change settings (speed, duplex,...)
+ss -tupl — List internet services on a system
+    -tuo — List active connections to/from system
+
 
 WIRELESS:
+iwconfig — Sets the wireless configuration options basic to most wireless devices
+iwlist wlan0 — <option> — Displays current status information of a device, more detailed then iwconfig
+        scan (sudo) — List wireless networks in range 
+iwspy — Sets the list of IP addresses in a wireless network and checks the quality of their connections
+iwpriv — Accesses configuration options specific to a particular device
+rfkill  list — Show wireless adapters (wifi and bluetooth)
+    block/unblock <dev_num> — Block/unblock wireless device
+iw dev wlan0 — link — Show link status of wlan0
+        set biterates <standard> — Manually set interface speed
+        scan (sudo) — List wireless networks in range 
+wavemon — Monitor wireless connection link quality
 
-iwconfig - sets the wireless configuration options basic to most wireless devices
-iwlist wlan0    <option> - displays current status information of a device, more detailed then iwconfig
-                scan (sudo) - list wireless networks in range 
-iwspy - sets the list of IP addresses in a wireless network and checks the quality of their connections
-iwpriv - accesses configuration options specific to a particular device
-rfkill  list - show wireless adapters (wifi and bluetooth)
-        block/unblock <dev-num> - block/unblock wireless device
-iw dev wlan0    link - show link status of wlan0
-                set biterates <standard> - manually set interface speed
-                scan (sudo) - list wireless networks in range 
-wavemon - monitor wireless connection link quality
-    
+
 ========
 INTERNET:
 ========
 
-mutt - mail client
-sftp - secure ftp
-sshd - (openssh-server) ssh server deamon, on Windows service is named 'CYGWIN sshd'
-/etc/init.d/ssh restart (sudo) - restart sshd (ssh deamon) 
-/usr/local/etc/init.d/openssh start (sudo) - start openssh deamon 
-ssh-keygen -t rsa -C <email> - generate rsa key pair, keys are stored in ~/.ssh
-ssh - SSH client
-    <user>@<address> "mpg321 -" < <file>.mp3 - stream audio over ssh
-        enter ~. - kill unresponsive session
-scp <local-file> <user>@<host>:~<remote-file> - securely copy files over network
-wget - download files from WWW
-    -O - specify output file
-    -c - continue downloading unfinished file. Can also use wildcards, but use single quotes around url. 
-    -r -l1 --no-parent -A.gif - recursively to the depth of one ignoring references to the parent directory and all gifs.
-    curl - similar
-    "-qO -" - writes to standard output + quiet 
-    -i - urls specified by standard input
-transmissioncli - torrent terminal client 
-    -d - download limit (kB/s)
-    -u - upload limit 
-youtube-dl - download from youtube
-noip2 - dynamic dns update client
-rdesktop - Remote Desktop Protocol client
-tin, nn - usenet client
-nrss - rss feed reader
+mutt — Mail client
+sftp — Secure ftp
+sshd — (openssh-server) ssh server deamon, on Windows service is named 'CYGWIN sshd'
+
+/etc/init.d/ssh restart (sudo) — Restart sshd (ssh deamon) 
+/usr/local/etc/init.d/openssh start (sudo) — Start openssh deamon 
+ssh-keygen -t rsa -C <email> — Generate rsa key pair, keys are stored in ~/.ssh
+
+ssh — SSH client
+    <user>@<address> "mpg321 -" < <file>.mp3 — Stream audio over ssh
+        enter ~. — Kill unresponsive session
+scp — Securely copy files over network. Example: `scp <local_file> <user>@<host>:~<remote_file>`
+wget — Download files from WWW
+    -O — Specify output file
+    -c — Continue downloading unfinished file. Can also use wildcards, but use single quotes around url. 
+    -r -l1 --no-parent -A.gif — Recursively to the depth of one ignoring references to the parent directory and all gifs.
+curl — Similar
+    -qO - — Writes to standard output + quiet 
+    -i — Urls specified by standard input
+transmissioncli — Torrent terminal client 
+    -d — Download limit (kB/s)
+    -u — Upload limit 
+youtube-dl — Download from YouTube
+noip2 — Dynamic dns update client
+rdesktop — Remote Desktop Protocol client
+tin, nn — Usenet client
+nrss — Rss feed reader
+
 
 BROWSERS:
-lynx - terminal web browser 
-    -cmd_log=<file> - write keystrokes to script
-    -cmd_script=<file> - read keystrokes from script
-    -syslog-urls - log requested URLs with syslog.
-    -dumb - prints txt to stdout 
-    -crawl - same, turns numbers off
-    -source - prints html to stdout
-    -l - add the current link to your bookmark file 
-    a - save the address of a document or link to a bookmark file, by default ~/lynx_bookmarks.html
-    o - options (you can select vim mode)
-    ctrl+n - scroll down two lines
-    ctrl+p - scroll up two lines
-    ctrl+p - previous line
-    crrl+n - next line
-elinks - another web browser (has menus)
+lynx — Terminal web browser 
+    -cmd_log=<file> — Write keystrokes to script
+    -cmd_script=<file> — Read keystrokes from script
+    -syslog-urls — Log requested URLs with syslog.
+    -dumb — Prints txt to stdout 
+    -crawl — Same, turns numbers off
+    -source — Prints html to stdout
+    -l — Add the current link to your bookmark file 
+    a — Save the address of a document or link to a bookmark file, by default ~/lynx_bookmarks.html
+    o — Options (you can select vim mode)
+    ctrl+n — Scroll down two lines
+    ctrl+p — Scroll up two lines
+    ctrl+p — Previous line
+    crrl+n — Next line
+elinks — Another web browser (has menus)
+
 
 HACKING:
+nmap — -sP 192.168.1.1-3 — Network scanning
+    192.168.1.3 -p100-139 — Port scanning
+    -O 192.168.1.3 (sudo) — Scanning os 
+tcpdump (sudo) — Sniffer (show network traffic) 
+    -l — Buffered output (for piping to less, etc.)
+ettercap — Multipurpose sniffer/interceptor/logger for switched LAN (can detect man in the middle, denial of service, DNS spoofing)
+driftnet — Picks out and displays images from network traffic
+kismet — Wireless 802.11b monitoring tool
+aircrack-ng — Wireless WEP/WPA cracking utilities
+Cain & Abel — Password recovery tool for Microsoft Operating Systems
+dnsniff — Warious hacking tools: 
+    arpspoof — For man in the middle attack
+    dsniff — Password sniffer for several protocols, ...
+ip link set eth0    promisc on — Set network interface to promiscuous mode
+            multicast off — Set multicast off
 
-nmap -sP 192.168.1.1-3 - network scanning
-    192.168.1.3 -p100-139 - port scanning
-    -O 192.168.0.3 (sudo) - scanning os 
-tcpdump (sudo) - sniffer (show network traffic) 
-    -l - buffered output (for piping to less, etc...)
-ettercap - multipurpose sniffer/interceptor/logger for switched LAN (can detect man in the middle, denial of service, DNS spoofing)
-driftnet - picks out and displays images from network traffic
-kismet - Wireless 802.11b monitoring tool
-aircrack-ng - wireless WEP/WPA cracking utilities
-Cain & Abel - password recovery tool for Microsoft Operating Systems
-dnsniff - warious hacking tools: 
-    arpspoof - for man in the middle attack
-    dsniff - password sniffer for several protocols, ...
-ip link set eth0    promisc on - set network inerface to promiscuous mode
-                    multicast off - set multicast off
 
 ======
 SYSTEM:
 ======
 
-meta, system info - in cinnamon
-uname -a - print system info, kernel version
-cat /etc/issue - show name and version of distribution
+meta, system info — In cinnamon
+uname -a — Print system info, kernel version
+cat /etc/issue — Show name and version of distribution
 
-init - upstart init daemon job configuration
-telinit - change system runlevel
-dmesg - print the contents of your bootup (startup) messages displayed by the kernel. This is often useful when debugging problems
-getconf -a - print all system configuration variables
-nohup <command> - run a command immune to hangups, runs even after the shell is closed (writes output to nohup.out)
-nohup <command> &>/dev/null & - run a command immune to hangups in background, do not save output
+init — Upstart init daemon job configuration
+telinit — Change system runlevel
+dmesg — Print the contents of your bootup (startup) messages displayed by the kernel. This is often useful when debugging problems
+getconf -a — Print all system configuration variables
+nohup <cmd> — Run a command immune to hangups, runs even after the shell is closed (writes output to nohup.out)
+    &>/dev/null & — Run a command immune to hangups in background, do not save output
+wmctrl — X Window Manager
+awesome — Tiled window manager
+    -k — Check configuration script for errors
 
-wmctrl - X Window Manager
+busybox <cmd> — Combines tiny versions of many common UNIX utilities into a single small executable. (1.5 Mb)
+mono — .NET support
 
-awesome - tiled window manager
-    -k - check configuration script for errors
-
-busybox <command> - combines tiny versions of many common UNIX utilities into a single small executable. (1.5 Mb)
-mono - .NET support
 
 USERS:
-users - prints logged in users
-who - logged in users, more data
-w - logged in users, also what are they running
-vipw - edit password file
-vigr - edit groups file
-umask -  the umask is a value set by the shell. It controls the default permissions of any file created
-usermod <user> - modify user acount information
-    -l newname oldname
-    -c "new real name" username
-    -d /my/new/home username - change location of the users home
-    -m -d /my/new/home - also move the files
-useradd <user> - add user
-adduser <user> - more high level (use 'adduser <user> sudo' after to add user to sudo group)
-    --system - create system user (can not log in) 
-adduser <user> <group> - add user to group (only takes effect after login!!!)
-groups <user> - what groups user belongs to
-userdel -r <user> - remove user and his home dir
-deluser -remove-all-files <user> - more high level, removes also files outside home, cron jobs, itd
-passwd <user> - change password
+users — Prints logged in users
+who — Logged in users, more data
+w — Logged in users, also what are they running
+vipw — Edit password file
+vigr — Edit groups file
+umask —  the umask is a value set by the shell. It controls the default permissions of any file created
+usermod <user> — Modify user account information
+    -l <new_name> <old_name> —
+    -c "<new_real_name>" <user> —
+    -d /my/new/home <user> — Change location of the users home
+    -m -d /my/new/home — Also move the files
+useradd <user> — Add user
+adduser <user> — More high level (use `adduser <user> sudo`  after to add user to sudo group)
+    --system — Create system user (can not log in) 
+    <group> — Add user to group (only takes effect after login!!!)
+groups <user> — What groups user belongs to
+userdel -r <user> — Remove user and his home dir
+deluser  -remove-all-files <user> — More high level, removes also files outside home, cron jobs, itd
+passwd <user> — Change password
+
 
 FILE SYSTEMS:
-mkfs - build a Linux filesystem
-mke2fs - create a ext filesystem
-mkswap - set up a swap area
-parted - partition manipulation program
-    -l (sudo) - list partitions 
-fdisk - manipulate disk partition table
-    -l (sudo) - list partitions 
-disks - nice gui partition tool
-mount - list all mounted devices (to get list of devices use fdisk -l)
-    <device> <path> - for example mount /dev/hdc2 to /mymedia
-lsattr - list file attributes
-chattr - change file attributes
-rkhunter -c - checks if it can find any rootkits under the system
-ntfsundelete <HD name> (sudo) - undelete files on ntfs partition 
+mkfs — Build a Linux filesystem
+mke2fs — Create a ext filesystem
+mkswap — Set up a swap area
+parted — Partition manipulation program
+    -l (sudo) — List partitions 
+fdisk — Manipulate disk partition table
+    -l (sudo) — List partitions 
+disks — Nice GUI partition tool
+mount — List all mounted devices (to get list of devices use `fdisk -l`)
+    <device> <path> — For example mount /dev/hdc2 to /mymedia
+lsattr — List file attributes
+chattr — Change file attributes
+rkhunter -c — Checks if it can find any rootkits under the system
+ntfsundelete — Undelete files on NTFS partition 
+
 
 LOGGING:
-last - when various users have logged in or out. This includes information on when the computer was rebooted.
-lastlog - displays a list of users and what day/time they logged into the system
-rsyslogd -  manages all the logs on your system
+last — When various users have logged in or out. This includes information on when the computer was rebooted.
+lastlog — Displays a list of users and what day/time they logged into the 
+    system.  
+    To get all failed logins run:  
+    `cat /var/log/auth.log | grep "failed password" -i`.
+rsyslogd —  manages all the logs on your system
     closelog, openlog, syslog, vsyslog -> library calls that send messages to the system logger
-logger - makes entries in the system log
-cat /var/log/auth.log | grep "failed password" -i - print all failed logins
-zeitgeist - activity logger
+logger — Makes entries in the system log
+zeitgeist — Activity logger
+
 
 LOAD:
-tload - 'graphic' representation of system load
-top - show processes by resource consumption
-    <, > - change resource
-htop - better top
-free -tm - displays memory statistics 
-    -s <seconds> - continuously display
-vmstat - performance of system components / virtual memory statistics
-sar - system activity information
-iostat - disk usage
-time <command> - time a execution of a command
-perf - profiler
+tload — 'graphic' representation of system load
+top — Show processes by resource consumption
+    <, > — Change resource
+htop — Better top
+free -tm — Displays memory statistics 
+    -s <seconds> — Continuously display
+vmstat — Performance of system components / virtual memory statistics
+sar — System activity information
+iostat — Disk usage
+time <cmd> — Time a execution of a command
+perf — Profiler
+
 
 TRACING:
-auditd - system call auditing (package)
-ausearch - querys the audit logs
-autrace - traces a specific process
-auditctl - controls the behavior of the auditd server
-strace <command and parameters> - trace system calls and signals. All printed system calls can be looked up by man!
-    -s - maximum string size we want printed (default is too short, 2000 is ok)
-    -f - also follow children
-    -p <pid> - attach to process
-    -o <file> - write output to file
-    -c - count/aggregate
-    -T - time the execution of each call
-ltrace - list library calls made by command
-lsof - list open files with file descriptors
-    -p <pid> - open files by process
-    <path> - open files in path
-lsmod - show which kernel modules (drivers) are loaded
-modinfo <module> - get more information about kernel module
+auditd — System call auditing (package)
+ausearch — Querys the audit logs
+autrace — Traces a specific process
+auditctl — Controls the behavior of the auditd server
+strace <cmd> — Trace system calls and signals. All printed system calls can be looked up by `man`!
+    -s — Maximum string size we want printed (default is too short, 2000 is OK)
+    -f — Also follow children
+    -p <pid> — Attach to process
+    -o <file> — Write output to file
+    -c — Count/aggregate
+    -T — Time the execution of each call
+ltrace — List library calls made by command
+lsof — List open files with file descriptors
+    -p <pid> — Open files by process
+    <path> — Open files in path
+lsmod — Show which kernel modules (drivers) are loaded
+modinfo <module> — Get more information about kernel module
+
 
 HARDWARE:
-lshw (sudo) - list all hardware 
-lspci [-tv] - show pci info
-lsusb [-tv] - show usb info
-lscpu - print CPU information
-dmidecode -q - display bios/dmi information like ram size/type,
-    max ram, computer model name, cpu information..
-smartctl -A /dev/sda - show disk usage info
-hdparm -tT /dev/sda - do a read speed test
-badblocks -s /dev/sda - check for bad blocks
-fstrim -v / - discard unused blocks, useful for ssd-s
-sensors - (lm-sensors) hardware monitoring tool, temperature, fan speed
-pwmconfig - (fancontrol) set fan speed
+lshw (sudo) — List all hardware 
+lspci [-tv] — Show pci info
+lsusb [-tv] — Show usb info
+lscpu — Print CPU information
+dmidecode -q — Display bios/dmi information like ram size/type,
+    max ram, computer model name, cpu information.
+smartctl  -A /dev/sda — Show disk usage info
+hdparm  -tT /dev/sda — Do a read speed test
+badblocks  -s /dev/sda — Check for bad blocks
+fstrim -v / — Discard unused blocks, useful for ssd-s
+sensors — (lm-sensors) hardware monitoring tool, temperature, fan speed
+pwmconfig — (fancontrol) set fan speed
+
 
 TERMINAL:
-tty - print the file name of the terminal connected to standard input
-stty - change and print terminal line settings
-openvt -  run a program on a next available tty
-script - makes a typescript of everything printed on your terminal. Ctrl-d to stop recording.
-setterm - set terminal atributes
-    -cursor off/on - set cursor on/off
-gpm - enable mouse for tty
+tty — Print the file name of the terminal connected to standard input
+stty — Change and print terminal line settings
+openvt —  run a program on a next available tty
+script — Makes a typescript of everything printed on your terminal. Ctrl-d to stop recording.
+setterm — Set terminal attributes
+    -cursor off/on — Set cursor on/off
+gpm — Enable mouse for tty
+
 
 KEYS/CHARACTERS/FONTS:
 IN X:
-xmodmap - remap keys
-setxkbmap -layout us - set us keyboard layout
-xev - get keycodes of pressed keys
-xset - user preference utility for X
-    -r - turn key autorepeat off 
-    r - turn key autorepeat on
+xmodmap — Remap keys
+setxkbmap -layout us — Set us keyboard layout
+xev — Get keycodes of pressed keys
+xset — User preference utility for X
+    -r — Turn key autorepeat off 
+    r — Turn key autorepeat on
 X NOT NECESSARY:
-loadkeys <country-code> - load key mapping 
-showkey - get keycodes of pressed keys
-setfont <font> - set console font
-    /usr/share/consolefonts/Uni2-VGA16.psf.gz - for example
-    /etc/default/console-setup contains the default settings 
-jfbterm - enable unicode characters in terminal
-echo -en "\e]PC7373C9" - change blue color in tty (first numeral after P means slot, and others shade)
+loadkeys <country_code> — Load key mapping 
+showkey — Get keycodes of pressed keys
+setfont <font> — Set console font
+    /usr/share/consolefonts/Uni2-VGA16.psf.gz — For example
+    /etc/default/console-setup — contains the default settings 
+jfbterm — Enable unicode characters in terminal
+echo -en "\e]PC7373C9" — Change blue color in tty (first numeral after P means slot, and others shade)
+
 
 =========
 PROCESSES:
 =========
 
-ps --forest - view hierarchical view of processes
-    v - virtual memory 
-    --sort <field> - sort by field 
-pstree - similar
-pgrep <pattern> - prints PIDs of processes containing pattern
-    -l - also print process name
-pkill <pattern> - kills every process that contains pattern in name
-kill    <pid> - sends TERM signal to process
-    -kill <pid> - sends KILL signal meaning force quit, data will be lost
-killall - uses name instead of pid
-skill - sends signals to command/user/tty or report process status
-        -stop <user> - stop all of the users processes
-        -cont <user> - continue all users processes
-nice - sets the priority for a process (from max of -20 to min of 20)
-    -20 <command> - execute command with maximum priority
-renice - changes the priority of an existing process
-        +20 <pid> - change processes priority to lowest level
-snice - works very similarly to skill
-        -10 -u root - increase the priority of all root's processes
-pmap - report memory map of a process (mapped file)
+ps --forest — View hierarchical view of processes
+    v — Virtual memory 
+    --sort <field> — Sort by field 
+pstree — Similar
+pgrep <pattern> — Prints PIDs of processes containing pattern
+    -l — Also print process name
+pkill <pattern> — Kills every process that contains pattern in name
+kill    <pid> — Sends TERM signal to process
+    -kill <pid> — Sends KILL signal meaning force quit, data will be lost
+killall — Uses name instead of pid
+skill — Sends signals to command/user/tty or report process status
+    -stop <user> — Stop all of the users processes
+    -cont <user> — Continue all users processes
+nice — Sets the priority for a process (from max of -20 to min of 20)
+    -20 <cmd> — Execute command with maximum priority
+renice — Changes the priority of an existing process
+    +20 <pid> — Change processes priority to lowest level
+snice — Works very similarly to skill
+    -10 -u root — Increase the priority of all root's processes
+pmap — Report memory map of a process (mapped file)
+
 
 JOBS:
+Ctrl z — Put job into background
+jobs — Prints currently running job
+bg <job_id> — Put job in background
+fg <job_id> — Bring job to the foreground
+%n — Job number n
+%s — Job whose command line starts with s
+%% — Current job
+%- — Previous job
 
-ctrl-z - put job into background
-jobs - prints currently running job
-bg <job-number> - put job in background
-fg <job-number> - bring job to the foreground
-%n - job number n
-%s - job whose command line starts with s
-%% - current job
-%- - previous job
 
 SCHEDULED COMMANDS:
-
-at - executes command at a particular time
+at — Executes command at a particular time
     at 21:30 / at now + time / at -f shell_script now + 1 hour
     echo "ls -l" | at midnight
-atq - list jobs currently in 'at' queue
-atrm - remove a job from the 'at' queue
-crontab -e - schedule commands for repeating execution 
-cron - daemon that executes scheduled commands 
-    sudo service cron status - print status of cron
-    sudo service cron [stop|start|restart] - stop, start, or restart cron deamon
-    sudo vim /etc/default/cron - set logging lever
-    cat /var/log/cron - print log
-anacron - like cron but it catches up with tasks next time the computer gets turned on
+atq — List jobs currently in 'at' queue
+atrm — Remove a job from the 'at' queue
+crontab -e — Schedule commands for repeating execution 
+cron — Daemon that executes scheduled commands 
+    sudo service cron status — Print status of cron
+    sudo service cron [stop|start|restart] — Stop, start, or restart cron deamon
+    sudo vim /etc/default/cron — Set logging lever
+    cat /var/log/cron — Print log
+anacron — Like cron but it catches up with tasks next time the computer gets turned on
 
-SERVICES:
-    
-service - allows you to start, stop or restart a service (it runs a script in /etc/init.d folder)
-    -f sshd - restart the ssh server
-    httpd status - get status of apache
-    --status-all - print status of all services
+
+SERVICES:   
+service — Allows you to start, stop or restart a service (it runs a script in /etc/init.d folder)
+    -f sshd — Restart the ssh server
+    httpd status — Get status of apache
+    --status-all — Print status of all services
     You can also execute the shell script directly from /etc/init.d folder like: /etc/init.d/httpd stop. 
 
-SYSTEM RUNLEVELS (RedHat/Debian):
-runlevel - output previous and current runlevel
-0 - Shuts down the system
-1 - Administrative single-user mode
-2 - Same as 3 but without networking / multiuser with X server
-3 - Text mode state (ctrl+alt+F1) / User defined
-4 - User defined
-5 - X-window mode (ctrl+alt+F7) / User defined
-6 - Reboots
-S - Single user mode
+
+SYSTEM RUNLEVELS:
+runlevel — Output previous and current runlevel
+    0 — Shuts down the system
+    1 — Administrative single-user mode
+    2 — Same as 3 but without networking / multiuser with X server
+    3 — Text mode state (ctrl+alt+F1) / User defined
+    4 — User defined
+    5 — X-window mode (ctrl+alt+F7) / User defined
+    6 — Reboots
+    S — Single user mode
+
 
 ==========
 MULTIMEDIA:
 ==========
 
 AUDIO:
+alsamixer — Set audio level (curses)
+amixer — Set audio levels (command line)
+rmmod pcspkr (sudo) — Disable pc-speaker, beep 
 
-alsamixer - set audio level (curses)
-amixer - set audio levels (command line)
-rmmod pcspkr (sudo) - disable pc-speaker, beep 
-
-cmus - music player (can be controlled from outside)
-mplayer - movie/music player
-mpg321 - plays mp3
-ogg123 - plays ogg
-aplay - plays audio
-play - plays audio
-arecord <file>  - command line audio recorder and player
-    -f <format> - set file format (cd)
-    -d <seconds> - set duration
-    -f cd -d <seconds> -t raw | lame -x -r - out.mp3 - capture audio that is playing and convert it to mp3
-id3v2 -l - lists all files tags
-sound-juicer - cd ripper
-xfburn - cd burner
-traverso - simple daw
+cmus — Music player (can be controlled from outside)
+mplayer — Movie/music player
+mpg321 — Plays mp3
+ogg123 — Plays ogg
+aplay — Plays audio
+play — Plays audio
+arecord <file>  — Command line audio recorder and player
+    -f <format> — Set file format (cd)
+    -d <seconds> — Set duration
+    -f cd -d <seconds> -t raw | lame -x -r — Out.mp3 — Capture audio that is playing and convert it to mp3
+id3v2 -l — Lists all files tags
+sound-juicer — Cd ripper
+xfburn — Cd burner
+traverso — Simple daw
 
 BITMAP:
-
-display - displays an image
-montage - creates a montage from images
-    <input-file/s> -set label '%t' <output-file/s> - labels images
-convert <old> <new> - converts file format (imagemagick)
-import - captures screen-shots from the X server
-mogrify - edit image
-gocr - command line text recognition tool
-ocrad - command line text recognition tool
-ppmforge - creates picture of random planet or clouds
-gnuplot - interactive plotter: plot [-10:10] sin(x)
-    -p - leave plots open after exit
-    plot <file>.dat - plot data from dat file
-fbi - display images inside tty
+display — Displays an image
+montage — Creates a montage from images
+    <input_file/s> -set label '%t' <output_file/s> — Labels images
+convert <old> <new> — Converts file format (imagemagick)
+import — Captures screen-shots from the X server
+mogrify — Edit image
+gocr — Command line text recognition tool
+ocrad — Command line text recognition tool
+ppmforge — Creates picture of random planet or clouds
+gnuplot — Interactive plotter: plot [-10:10] sin(x)
+    -p — Leave plots open after exit
+    plot <file>.dat — Plot data from dat file
+fbi — Display images inside tty
 
 VIDEO:
+ffmpeg -i <file_in> <file_out> — Video and audio format converter. Has been replaced by avconv
+avconv -i <file_in> <file_out> — Video and audio format converter (libav-tools)
 
-ffmpeg -i <file-in> <file-out> - video and audio format converter. Has been replaced by avconv
-avconv -i <file-in> <file-out> - video and audio format converter (libav-tools)
-
-openshot - gui movie editor 
-openmovieeditor - gui movie editor 
-aview, asciiview - ASCII art image viewer and video player
+openshot — Gui movie editor 
+openmovieeditor — Gui movie editor 
+aview, asciiview — ASCII art image viewer and video player
 
 
-#########################
-## AWESOME LINUX FILES ##
-#########################
+
+##########################
+## AWESOME DEBIAN FILES ##
+##########################
 
 BASH:
-~/.bashrc - executed at every shell startup, user specific
-/etc/bash.bashrc - executed at every shell startup, all users
-~/.profile, .bash_profile, .bash_login - first file found executed at login, user specific 
-/etc/profile - executed at login, all users (put PATHS here)
---
-/etc/rc.local - last startup script executed, runs command as su
+~/.bashrc — Executed at every shell startup, user specific
+/etc/bash.bashrc — Executed at every shell startup, all users
+~/.profile, .bash_profile, .bash_login — First file found executed at login, user specific 
+/etc/profile — Executed at login, all users (put PATHS here)
+/etc/rc.local — Last startup script executed, runs command as su
+
 
 HOME:
-~/.Xmodmap - keyboard map
+~/.Xmodmap — Keyboard map
+
 
 BINS:
-/bin - key programs like ls, cat, bash,...
-/sbin - key programs for system management like ifconfig, mkfs, fdisk...
-/usr/bin - distribution managed programs
-/usr/sbin - distribution managed system programs
-/usr/local/bin - user programs not managed by the distribution package
-/usr/local/sbin - user system management programs, not managed by the distribution package
+/bin — Key programs like ls, cat, bash, ...
+/sbin — Key programs for system management like ifconfig, mkfs, fdisk, ...
+/usr/bin — Distribution managed programs
+/usr/sbin — Distribution managed system programs
+/usr/local/bin — User programs not managed by the distribution package
+/usr/local/sbin — User system management programs, not managed by the distribution package
 
-ETC ( "Edit To Configure" / "Editable Text Configuration" ):
-/etc/mailcap - default programs for extensions 
-/etc/passwd - users 
-/etc/groups - groups 
-/etc/default/console-setup - set (tty) console character set, font size...
-/etc/fstab - Filesystam table. To mount drive at startup create folder in /media and add line like this (see man fstab for details):
-    /dev/sda1   /media/data   ntfs   user,fmask=0111,dmask=0000   0   2
-/etc/alternatives - links to default application versions (here you can change the default java jdk)
-/etc/issue - name and version of distribution
-/etc/fstab - automatic mounts are handled by configuring the file
-/etc/sudoers - lists of users and the commands they can run with sudo (needs to be edited with visudo command)
-/etc/apt/sources.list - list of places where to look for packages
+
+GENERAL CONFIG:
+"Edit To Configure" or "Editable Text Configuration".
+/etc/mailcap — Default programs for extensions 
+/etc/passwd — Users 
+/etc/groups — Groups 
+/etc/default — Boot script parameters that the end user or administrator is likely to change.  
+    /console-setup — Set console (tty) character set, font size, ...
+/etc/fstab — Filesystem table. To mount drive at startup, create dir in `/media` and append line like this :
+    `/dev/sda1   /media/data   ntfs   user,fmask=0111,dmask=0000   0   2` (Check `man fstab` for details).
+/etc/alternatives — Links to default application versions (here you can change the default Java JDK)
+/etc/issue — Name and version of distribution
+/etc/fstab — Automatic mounts are handled by configuring the file
+/etc/sudoers — Lists of users and the commands they can run with sudo (needs to be edited with visudo command)
+/etc/apt  /sources.list — List of places where to look for packages
+
 
 SERVICES:
-/etc/init/, ~/.init/ - init - upstart init daemon job configuration
-/etc/init.d/ - folder with service scripts, that get executed at start and end
-/etc/init.d/halt - runs at the end 
-/etc/rc<level>.d - startup scripts for different runlevels - links to scripts in /etc/init.d - S85httpd -> S means startup, K is for stop. (To disable service just change S for K)
-/etc/rc.local - last initialization file executed - put your commands here
+/etc/init/, ~/.init/  Init — Upstart init daemon job configuration
+/etc/init.d — Folder with service scripts, that get executed at start and end
+    /halt — Runs at the end 
+/etc/rc<level>.d — Startup scripts for different runlevels - Links to scripts in /etc/init.d - S85httpd -> S means startup, K is for stop. (To disable service just change S for K)
+/etc/rc.local — Last initialization file executed - Put your commands here
 
-/etc/init/ssh.conf - sshd config
-/etc/ssh/sshd_config - sshd config
-/etc/crontab - system-wide crontab
-/etc/cron.hourly, /etc/cron.daily, ... - links to scripts that will execute periodically. Scripts within a cron directory are run alphabetically.
-/etc/rsyslog.conf|rsyslog.d/50-default.conf - log conf (need to restart rsyslogd after edit)
-/etc/syslog.conf - Configuration information for syslogd 
+/etc/init/ssh.conf — Sshd config
+/etc/ssh/sshd_config — Sshd config
+/etc/crontab — System-wide crontab
+/etc/cron.hourly, /etc/cron.daily, ... — Links to scripts that will execute periodically. Scripts within a cron directory are run alphabetically.
+/etc/rsyslog.conf | rsyslog.d/50-default.conf — Log conf (need to restart rsyslogd after edit)
+/etc/syslog.conf — Configuration information for syslogd 
+
 
 NETWORK:
-/etc/resolv.conf - dns information
-/etc/sysconfig/networking/devices/ifcfg-eth0 - use ifcfg to configure a particular interface
-/etc/services - list of internet services with their port numbers
-/etc/NetworkManager/NetworkManager.conf - configuration file
+/etc/resolv.conf — Dns information
+/etc/sysconfig  /networking/devices/ifcfg-eth0 — Use ifcfg to configure a particular interface
+/etc/services — List of internet services with their port numbers
+/etc/NetworkManager  /NetworkManager.conf — Configuration file
 
-PROC (various information about the system):
-/proc/cpuinfo - information about the CPU
-/proc/modules -  information about which kernel-modules are loaded on your system
-/proc/net/ - network related
-/proc/net/route - routing table
-    netstat - displays contents of /proc/net files
-/proc/iomem - neat memory map
-/proc/partitions - partitions info
-/proc/acpi/battery/BAT1/info - battery info
-/proc/acpi/ac_adapter/ACAD/state - adapter info
-/proc/acpi/wakeup - list of devices that can wake up your machine via acpi
-    sudo sh -c "echo USB1 > /proc/acpi/wakeup" - enable device USB1 to wakeup computer from sleep/suspend
-/proc/net/wireless - wireless connection info
 
-USR - "Unix System Resources":
-/usr/lib/jvm - java jres and jdks
-/usr/share/man - man pages
-/usr/share/bash-completion - bash completion functions
+PROC: 
+Various information about the system.
+/proc/cpuinfo — Information about the CPU
+/proc/modules —  information about which kernel-modules are loaded on your system
+/proc/net — Network related
+    /route — Routing table
+    /netstat — Displays contents of /proc/net files
+/proc/iomem — Neat memory map
+/proc/partitions — Partitions info
+/proc/acpi  /battery/BAT1/info — Battery info
+    /ac_adapter/ACAD/state — Adapter info
+    /wakeup — List of devices that can wake up your machine via acpi
+    sudo sh -c "echo USB1 > /proc/acpi/wakeup" — Enable device USB1 to wakeup computer from sleep/suspend
+/proc/net/wireless — Wireless connection info
 
-SBIN - the "system-administrator's bin file":
-    Hosts programs that would be in /bin if they didn't have "root-only" access permissions.
 
-VAR - "variable":
-/var/log/ - system logs in here
-/var/log/auth.log - logins
-/var/log/syslog - most of the rest of the logs 
-/var/spool - contains data which is awaiting some kind of later processing
+USR:
+"Unix System Resources"
+/usr/lib  /jvm — Java JREs and JDKs
+/usr/share  /man — Man pages
+    /bash-completion — Bash completion functions
 
-BOOT (kernels):
-/boot/grub/menu.lst - grub configuration file
-/etc/default/grub - grub configuration file
+
+SBIN:
+The "system-administrator's bin file".
+Hosts programs that would be in /bin if they didn't have "root-only" access permissions.
+
+
+VAR:
+"Variable"
+/var/log — System logs in here
+    /auth.log — Logins
+    /syslog — Most of the rest of the logs 
+/var/spool — Contains data which is awaiting some kind of later processing
+
+
+BOOT:
+Kernels.
+/boot/grub/menu.lst — Grub configuration file
+/etc/default/grub — Grub configuration file
+
 
 
 ###########
@@ -934,392 +1062,451 @@ BOOT (kernels):
 ###########
 
 GIT MANTRA:
+```markdown
 git init
 git add <file> OR git add .
 git status
-git commit -am "<commit-message>"
+git commit -am "<commit_message>"
+```
 
 CLONE FROM GITHUB:
-git clone git@github.com:/<user>/<project> - download repo (later you keep refreshing with 'git pull origin master') -> You need SSH key. If you don't want, use https://github.com/<user>/<repo> for address.
+```markdown
+git clone git@github.com:/<user>/<project> — Download repo (later you keep refreshing with 'git pull origin master') -> You need SSH key. If you don't want, use https://github.com/<user>/<repo> for address.
+```
 
 GENERATE SSH KEY:
-1. - Check for existing keys: cd ~/.ssh; ls -al
-2. - Generate new key: ssh-keygen -t rsa -C "your_email@example.com"
-3. - Add your key to the ssh-agent: ssh-add ~/.ssh/id_rsa
-4. - Add your key to GitHub: copy contents of ~/.ssh/id_rsa.pub and paste them into key field at Acount settings > SSH Keys > Add SSH key.
+1. — Check for existing keys: cd ~/.ssh; ls -al
+2. — Generate new key: ssh-keygen -t rsa -C "your_email@example.com"
+3. — Add your key to the ssh-agent: ssh-add ~/.ssh/id_rsa
+4. — Add your key to GitHub: copy contents of ~/.ssh/id_rsa.pub and paste them into key field at 'Account settings' > 'SSH Keys' > 'Add SSH key'.
+
 
 ADD TO GITHUB:
-Create remote repository on website
+```markdown
+# Create remote repository on website.
 git remote add origin git@github.com:/<user>/<project>.git
 git pull origin master
 git push origin master
-after your first push, you can simply type:
-git push
-sometimes also: git push --set-upstream origin master
+# Sometimes also: git push --set-upstream origin master
+```
 
 REMOTE:
-git remote update - get info about state of remote
-git remote show origin - print address of the origin
-git remote set-url origin git@github.com:<user>/<repo>.git - change the url of origin, ssh key needed
-git remote set-url origin https://www.github.com/<user>/<repo>.git - same, but withouth key
-git status -uno - check if everything up-to-date
-git fetch; git checkout <branch> - checkout remote branch
+```markdown
+git remote  update — Get info about state of remote
+    show origin — Print address of the origin
+    set-url origin <origin> — `git@github.com:<user>/<repo>.git` - Change the url of origin, ssh key needed; `https://www.github.com/<user>/<repo>.git` - Same, but withouth key.
+git status -uno — Check if everything up-to-date
+git fetch; git checkout <branch> — Checkout remote branch
+```
 
 TAGS:
-git push --tags - push tags
-git fetch --tags - pulling tags (automaticaly if on the same branch and there is a new commit?)
+```markdown
+git push --tags — Push tags
+git fetch --tags — Pulling tags (automatically if on the same branch and there is a new commit?)
+```
 
 UNDO:
-git reset --hard HEAD~1 - delete last commit and all of its changes
-git reset HEAD~1 - delete last commit but keep your changes
+```markdown
+git reset  --hard HEAD~1 — Delete last commit and all of its changes
+    HEAD~1 — Delete last commit but keep your changes
+```
 
 ALSO USEFUL:
-git checkout HEAD^ <file> - retrieve deleted file
-git rm --cached <file> - untrack file without deleting it
-git tag -a 0.9.1 -m "Version 0.9.1 release" - tag latest commit
-git tag - list local tags
-chown -R <user>:<group> * (sudo) - in .git/objects 
-git format-patch -1 <sha> - generate patch file
-git rev-parse HEAD - get sha of head
-git revert
-git describe - print version and hash of HEAD
-git log --name-only --author=<name> - print changed files by commit
-git log <file> - print files history
-git ls-files - list files
-git show <revision>:<file> - take a peek at the older revision of the file
-git diff <commit> <commit> - compare two commits
-git stash - if you want to switch branches, but you don't want to commit your changes yet, you can 'stash' them
-git stash apply - apply the changes you stashed
-git stash list - list all the stashes
-git stash show -p stash@{0} - show the diff of most recent stash
-git update-index --chmod=+x <file> - change files permissions
-git config -l - print repos configuration settings
-git config core.filemode false - ignores executable bit of the files
+```shell
+git checkout HEAD^ <file> — Retrieve deleted file
+git rm --cached <file> — Untrack file without deleting it
+git tag -a 0.9.1 -m "Version 0.9.1 release" — Tag latest commit
+git tag — List local tags
+chown -R <user>:<group> * (sudo) — In .git/objects 
+git format-patch -1 <sha> — Generate patch file
+git rev-parse HEAD — Get sha of head
+git revert — 
+git describe — Print version and hash of HEAD
+git log --name-only --author=<name> — Print changed files by commit
+git log <file> — Print files history
+git ls-files — List files
+git show <revision>:<file> — Take a peek at the older revision of the file
+git diff <commit> <commit> — Compare two commits
+git stash — If you want to switch branches, but you don't want to commit your changes yet, you can 'stash' them
+git stash apply — Apply the changes you stashed
+git stash list — List all the stashes
+git stash show -p stash@{0} — Show the diff of most recent stash
+git update-index --chmod=+x <file> — Change files permissions
+git config -l — Print repos configuration settings
+git config core.filemode false — Ignores executable bit of the files
+```
 
 CHECKOUT:
-git log > ../gitLog - first save log to file
-git checkout <hash> - then checkout previous versions
-git checkout head - return to head
+```shell
+git log > ../gitLog — First save log to file
+git checkout <hash> — Then checkout previous versions
+git checkout head — Return to head
+```
 
 GITHUB MD FORMAT:
-![Alt text](/doc/basket-stats.png?raw=true "<Description>") - insert image
+![Alt text](/doc/basket-stats.png?raw=true "<Description>") — Insert image
+
 
 BISECT:
-git bisect start
-git bisect bad - tell git that current version is bad
-git bisect good v25.0.2 - tell git the last good version you know about
-now git will checkout a version in between, so you can check it and tell:
-git bisect bad/good - this will continue until the commit that introduced the bug is found 
-git bisect reset - exit bisect mode
+```shell
+git bisect start — 
+git bisect bad — Tell git that current version is bad
+git bisect good v25.0.2 — Tell git the last good version you know about.
+    Now git will checkout a version in between, so you can check it and tell:
+git bisect bad/good — This will continue until the commit that introduced the bug is found 
+git bisect reset — Exit bisect mode
+```
 
 TOOLS:
-gitk - repo explorer
-gitg - a bit nicer version
-tig - text based repo explorer
-gitstats - generates stats for git repo, outputs HTML
+gitk — Repo explorer
+gitg — A bit nicer version
+tig — Text based repo explorer
+gitstats — Generates stats for git repo, outputs HTML
+
 
 VIRTUAL BOX:
-git config core.filemode false - Ignores the filemode changes made by the host system
-git config --global --unset https.proxy - If problem pulling
+git config core.filemode false — Ignores the filemode changes made by the host system
+git config --global --unset https.proxy — If problem pulling
+
+
 
 ###########
 ##  VIM  ##
 ###########
 
-+<linenum> - open file at line number
-alt+<normal mode key> - escape, key !!!!!!!!!!!!!!!!!
-ctrl+[ - escape
-. - execute last command again
-; - repeat the last character-wise search
-\c - case insensitive search
-? - search backward
-V - linewise visual mode
-~ - switch case
-> - tab slection right 
->> - tab line right
-P - paste before cursor
-x - delete character
-gF - open file under cursor
-K - look up word under cursor in man pages
-ctrl+v - select visual box (block select)
-:e - reload file
-:sav - save file as and keep new file open (save as)
++<linenum> — Open file at line number
+alt+<normal mode key> — Escape, key !!!!!!!!!!!!!!!!!
+ctrl+[ — Escape
+. — Execute last command again
+; — Repeat the last character-wise search
+\c — Case insensitive search
+? — Search backward
+V — Linewise visual mode
+~ — Switch case
+> — Tab selection right 
+>> — Tab line right
+P — Paste before cursor
+x — Delete character
+gF — Open file under cursor
+K — Look up word under cursor in man pages
+ctrl+v — Select visual box (block select)
+:e — Reload file
+:sav — Save file as and keep new file open (save as)
+
 
 HELP:
-ctrl+] - follow link
-ctrl+o - go back
-:q     - exit help      
+ctrl+] — Follow link
+ctrl+o — Go back
+:q — Exit help  
+
 
 MOVEMENT:
-e - end of word
-E - end of WORD
-W - start of WORD
-ge - end of previous word
-), ( - sentence
-{, } - paragraph
-]], [[ - section
-:<num> - goto line number
-ctrl+o - go to previous locaton
-ctrl+i - go to next locaton
-% - jump to matching bracket
+e — End of word
+E — End of WORD
+W — Start of WORD
+ge — End of previous word
+), ( — Sentence
+{, } — Paragraph
+]], [[ — Section
+:<num> — Goto line number
+ctrl+o — Go to previous location
+ctrl+i — Go to next location
+% — Jump to matching bracket
+
 
 LINES:
-0 - start of line
-^,_ - first non-blank of line
-+,- - first non-blank of next/previous line
-Enter - first nonblank of next line
+0 — Start of line
+^,_ — First non-blank of line
++,- — First non-blank of next/previous line
+Enter — First non-blank of next line
+
 
 SCREEN LINES:
-g0, g$ - start/end of screen line
-gm - middle of screen line
-gk, gj - up/down one screen line
+g0, g$ — Start/end of screen line
+gm — Middle of screen line
+gk, gj — Up/down one screen line
+
 
 PAGE UP/DOWN:
-H,M,L - go to top/middle/bottom of screen
-ctrl F,B - page up/down
-ctrl D,U - half page up/down
-ctrl E,Y - one more line at bottom/top 
-z Enter, z., z- - reposition line with cursor at top/middle/bottom
+H,M,L — Go to top/middle/bottom of screen
+ctrl F,B — Page up/down
+ctrl D,U — Half page up/down
+ctrl E,Y — One more line at bottom/top 
+z Enter, z., z- — Reposition line with cursor at top/middle/bottom
+
 
 SEARCH:
-*,# - search forward/backward for exact word under cursor
-g*,g# - same, but even when word is embedded
-% - find match of current brace, quote,...
-fx,Fx - move cursor forward/backward to x on current line
-tx,Tx - same, but to one char before x
-;/, - repeat/reverse last
-:%s/old/new/gc - replace, like sed, c means with conformations
+*,# — Search forward/backward for exact word under cursor
+g*,g# — Same, but even when word is embedded
+% — Find match of current brace, quote,...
+fx,Fx — Move cursor forward/backward to x on current line
+tx,Tx — Same, but to one char before x
+;/, — Repeat/reverse last
+:%s/old/new/gc — Replace, like sed, c means with conformations
+
 
 MARKS:
-'" - move to position of last edit of file
-`. - move to last change in file
-`0 - position where you last exited vim
+'" — Move to position of last edit of file
+`. — Move to last change in file
+`0 — Position where you last exited vim
+
 
 INSERT MODE COMMANDS:
-ctrl+h - backspace
-ctrl+u - delete line
-ctrl+w - delete previous word
+ctrl+h — Backspace
+ctrl+u — Delete line
+ctrl+w — Delete previous word
+
 
 MACROS:
-q<x> - record actions (macro) into x
-q - stop recording macro
-@<x> - execute x (macro)
+q<x> — Record actions (macro) into x
+q — Stop recording macro
+@<x> — Execute x (macro)
+
 
 REGISTERS:
-"ayy - copy line into register a
-"ap - paste register a
-:reg - access all registers
+"ayy — Copy line into register a
+"ap — Paste register a
+:reg — Access all registers
+
 
 SET COMMAND:
-:set <x>    - set x
-:set no<x>, <x>!    - unset x
-:set <x>=value - assign x
-:set <x>-=value - remove value form <x>
-:set all        - print all values
-:set <x>?           - print x 
+:set <x> — Set x
+:set no<x>, <x>! — Unset x
+:set <x>=value — Assign x
+:set <x>-=value — Remove value form <x>
+:set all — Print all values
+:set <x>? — Print x 
+
 
 SET COMMAND OPERANDS:
-autoident, ai - autoident (noai)
-backup, bk      - back file up before overwrite (nobackup) 
-ignorecase, ic  - ignore case in search (noic)
-number, nu      - display line numbers (nonu)
-relativenumber, rnu - display relative numbers (nornu)
-shiftwidth, sw  - number of spaces added when identing (8)
-tabstop, ts     - tab width (8)
-wrap            - wrap lines (wrap)
-wrapscan, ws    - search wraps around file (ws)
-mouse=a         - mouse mode (use shift when selecting to copy to clipboard)
-linebreak - do not break words
+autoident, ai — Autoident (noai)
+backup, bk  — Back file up before overwrite (nobackup) 
+ignorecase, ic — Ignore case in search (noic)
+number, nu — Display line numbers (nonu)
+relativenumber, rnu — Display relative numbers (nornu)
+shiftwidth, sw — Number of spaces added when indenting (8)
+tabstop, ts — Tab width (8)
+wrap — Wrap lines (wrap)
+wrapscan, ws — Search wraps around file (ws)
+mouse=a — Mouse mode (use shift when selecting to copy to clipboard)
+linebreak — Do not break words
 
-:set iskeyword-=. - remove dot from words part (two words if separated with dot)
+:set iskeyword-=. — Remove dot from words part (two words if separated with dot)
+
 
 EDIT COMMANDS:
-[n] operation [m] motion - if both n and m are specified then n x m
+[n] operation [m] motion — If both n and m are specified then n x m
 
-c, d, y - change, delete, yank 
-C, D, Y - till the end of line
-cc, dd, yy - current line
-cf<x>, df<x>, yf<x> - forward up to x
-c), d), y) - sentence
+c, d, y — Change, delete, yank 
+C, D, Y — Till the end of line
+cc, dd, yy — Current line
+cf<x>, df<x>, yf<x> — Forward up to x
+c), d), y) — Sentence
 
-~ - change case of character
-g~w - switch case of a word
-gu, gU - to lower/upper case
+~ — Change case of character
+g~w — Switch case of a word
+gu, gU — To lower/upper case
 
-[p - paste but match current indentation
-r - replace character
-S - substitute entire line
-x,X - delete character/delete back
-. - repeat last change
-ctrl+a, ctrl+x - increment/decrement number under cursor
+[p — Paste but match current indentation
+r — Replace character
+S — Substitute entire line
+x,X — Delete character/delete back
+. — Repeat last change
+ctrl+a, ctrl+x — Increment/decrement number under cursor
+
 
 AUTOMATIC LINEBRAKE (WRAP):
-gq - formats (wraps) selected text 
-gqq - format current line
-:set tw=72 - set text width
+gq — Formats (wraps) selected text 
+gqq — Format current line
+:set tw=72 — Set text width
 ADVANCED:
-tw=72 fo=cq wm=0 - no automatic wraping, rewraping will wrap to 72
-tw - controls the wrap width you would like to use
-fo - controls whether or not automatic text wrapping is enabled, depending whether or not the t flag is set
-wm - controls when to wrap based on terminal size
+tw=72 fo=cq wm=0 — No automatic wrapping, rewrapping will wrap to 72
+tw — Controls the wrap width you would like to use
+fo — Controls whether or not automatic text wrapping is enabled, depending whether or not the t flag is set
+wm — Controls when to wrap based on terminal size
+
 
 COLORSCHEME:
-:colorscheme darkblue, torte - nice, darker
-    slate, default - less contrast
-:highlight Normal ctermbg=grey - set light background
+:colorscheme — darkblue, torte — Nice, darker
+    slate, default — Less contrast
+:highlight Normal ctermbg=grey — Set light background
+
 
 SPELLCHECK:
-:set spell spelllang=en_us - turn spellcheck on
-:setlocal spell spelllang=en_us
-:set nospell - turn off
-z= - show suggestions for misspelled word
-]s - go to next misspelled word
-[s - go to previous misspelled word
+:set spell spelllang=en_us — Turn spellcheck on
+:set nospell — Turn off
+:setlocal spell spelllang=en_us — Set dictionary
+z= — Show suggestions for misspelled word
+]s — Go to next misspelled word
+[s — Go to previous misspelled word
+
 
 TABS:
-:tabe <file> - open new tab
-gt, gT - go to next/previous tab
-ctrl+pgup/pgdn - switch tab
-vim -p - open one tab page per file
-ZZ - save and close tab (same as :wq)
+:tabe <file> — Open new tab
+gt, gT — Go to next/previous tab
+ctrl+pgup/pgdn — Switch tab
+vim -p — Open one tab page per file
+ZZ — Save and close tab (same as :wq)
+
 
 SPLITS:
-:vsp - split verticaly
-ctrl-w, direction - move to split
+:vsp — Split vertically
+ctrl-w, direction — Move to split
+
 
 AUTOCOMPLETE:
-ctrl+n - show autocomplete suggestions
+ctrl+n — Show autocomplete suggestions
+
 
 HEXDUMP:
-:%!xxd - convert to hex
-:%!xxd -r - convert back
+:%!xxd — Convert to hex
+:%!xxd -r — Convert back
+
 
 VUNDLE:
-:PluginInstall - install plugins
+:PluginInstall — Install plugins
+
 
 REFORMAT CODE:
-= - fix identation
+= — Fix indentation
+
+
 
 ##########
 ## MISC ##
 ##########
 
 PIRATEBAY:
-torrents.thepiratebay.sx/7532474/Cabin.torrent - download torrent file
+torrents.thepiratebay.sx/7532474/Cabin.torrent — Download torrent file
+
 
 JAVA:
-javac -cp <path>:<path>... - tell java where libraries are located
-java -Xmx6g myprogram - reserve 6 giga for process
-    -jar <jar> - execute jar
-    -cp .:<path>:<path>... - tell java where libraries are located, you also need to pass the location of class among paths, hence .:
-export _JAVA_OPTIONS=-Xmx1000m - set heap space globaly
-appletviewer <page>.html - run java applet
-jps -lvm - list java processes
-jmap -histo:live <pid> - memory map
-jvisualvm - profiler
-jar cvfe "bla.jar" <main-class> *.class - create executable jar
-jar xf <jar> - extract files from jar
-jar tf <jar> - print contents of a jar 
+javac -cp <path>:<path>... — Tell Java where libraries are located
+java -Xmx6g myprogram — Reserve 6 giga for process
+    -jar <jar> — Execute jar
+    -cp .:<path>:<path>... — Tell java where libraries are located, you also need to pass the location of class among paths, hence .:
+export _JAVA_OPTIONS=-Xmx1000m — Set heap space globally
+appletviewer <page>.html — Run Java applet
+jps -lvm — List java processes
+jmap -histo:live <pid> — Memory map
+jvisualvm — Profiler
+jar cvfe "bla.jar" <main_class> *.class — Create executable jar
+jar xf <jar> — Extract files from jar
+jar tf <jar> — Print contents of a jar 
+
 
 INSTALL ORACLE JDK:
+```shell
 sudo apt-get remove openjdk*
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java7-installer
+```
 
 INSTALL ORACLE JDK ON DEBIAN:
+```shell
 echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
 echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
 sudo apt-get update
 sudo apt-get install oracle-java7-installer
 sudo apt-get install oracle-java7-set-default
+```
 
 FIREFOX:
-about:config - layout.css.devPixelsPerPx default zoom (-1.0)
+about:config — Layout.css.devPixelsPerPx default zoom (-1.0)
+
 
 XRANDR:
-xrandr  --output VGA1 --primary - changes primary screen 
-        --output VGA1 --auto --pos 0x0 --output LVDS1 --auto --right-of VGA1 - to change their relative positions
-        -q - list devices
-        --auto - reset
-        --output LVDS1 --off - turn off laptop screen
-        --output [VGA|HDMI] --mode 1600x1200 - 24" 16x12 on
+xrandr  --output VGA1 --primary — Changes primary screen 
+    --output VGA1 --auto --pos 0x0  — `--output LVDS1 --auto --right-of VGA1` - To change their relative positions
+    -q — List devices
+    --auto — Reset
+    --output LVDS1 --off — Turn off laptop screen
+    --output [VGA|HDMI] --mode 1600x1200 — 24" 16x12 on
+
 
 MOUNT ISO:
+```shell
 sudo mkdir /media/x
-sudo mount -o loop <path-to-iso> /media/x
+sudo mount -o loop <path_to_iso> /media/x
+```
 
 ECLIPSE:
-ctrl+1 - quick fix
-alt+shift+s - source submenu
-ctrl+F7, esc - close pop-up console window
-ctrl+7, ctrl+/ - toggle comment
-F3 - goto definition
-objectaid - UML plugin 
+ctrl+1 — Quick fix
+alt+shift+s — Source submenu
+ctrl+F7, esc — Close pop-up console window
+ctrl+7, ctrl+/ — Toggle comment
+F3 — Goto definition
+objectaid — UML plugin 
+
 
 WINE:
-winecfg -> drives tab to set drive
-wine explorer /desktop=abalaba,1024x768 app.exe - run wine app in virtual desktop
-reason on wine: down alt down - open menu
-regedit - registry editor
+winecfg — Drives tab to set drive
+wine explorer /desktop=abalaba,1024x768 app.exe — Run wine app in virtual desktop
+reason on wine: down alt down — Open menu
+regedit — Registry editor
+
 
 CYGWIN:
-[cygwin] ssh-host-cofig, 
-[command prompt] net start sshd, 
-[any] ssh <windows username - CASE MATTERS!>@<host> - run sshd (use windows password)
+[cygwin] ssh-host-cofig —  
+[command prompt] net start sshd — 
+[any] ssh <windows_username - CASE MATTERS!>@<host> — Run sshd (use windows password)
+
 
 GOLANG:
-go  build       - compile packages and dependencies
-    clean       - remove object files
-    env         - print Go environment information
-    fix         - run go tool fix on packages
-    fmt         - run gofmt on package sources
-    get         - download and install packages and dependencies (first you need to set GOPATH to dir where packages will get downloaded)
-    install     - compile and install packages and dependencies
-    list        - list packages
-    run         - compile and run Go program
-    test        - test packages
-    tool        - run specified go tool
-    version     - print Go version
-    vet         - run go tool vet on packages
+go  build       — Compile packages and dependencies
+    clean       — Remove object files
+    env         — Print Go environment information
+    fix         — Run go tool fix on packages
+    fmt         — Run gofmt on package sources
+    get         — Download and install packages and dependencies (first you need to set GOPATH to dir where packages will get downloaded)
+    install     — Compile and install packages and dependencies
+    list        — List packages
+    run         — Compile and run Go program
+    test        — Test packages
+    tool        — Run specified go tool
+    version     — Print Go version
+    vet         — Run go tool vet on packages
 
-syntax highlight - https://github.com/jnwhiteh/vim-golang 
-    - for gedit: sudo cp /usr/share/gtksourceview-3.0/language-specs/go.lang /usr/share/gtksourceview-2.0/language-specs/
-simple ncurses - go get github.com/nsf/termbox-go
+syntax highlight — `https://github.com/jnwhiteh/vim-golang`
+for gedit — `sudo cp /usr/share/gtksourceview-3.0/language-specs/go.lang /usr/share/gtksourceview-2.0/language-specs/`
+simple ncurses — Go get github.com/nsf/termbox-go
 
-PYTHON:
-INSTALL MARKDOWN:
-git clone git://github.com/waylan/Python-Markdown.git python-markdown
-cd python-markdown
-python setup.py install
-PARSE MARKDOWN:
-python -m markdown -x markdown.extensions.tables table.txt - parse markdown containing table
 
 REPACKAGING A LINUX INSTALL ISO:
-
+```shell
 # Mount ISO
 mkdir -p /mnt/linux
 mount -o loop /tmp/linux-install.iso /mnt/linux
+```
 
+```shell
 # Copy contents to a working directory
 cd /mnt/
-tar -cvf - linux | (cd /var/tmp && tar -xf - )
+tar -cvf — Linux | (cd /var/tmp && tar -xf — )
+```
 
-# Make your changes and repackage (on debian use genisoimage). -c passes the name of the file that will be created
+```shell
+# Make your changes and repackage (on Debian use genisoimage). -c passes the name of the file that will be created
 cd /var/tmp/linux
 mkisofs -o ../your-new.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V Your Disk Name Here .
+```
 
 GDB:
-gdb <command> - start gdb
-run <arguments>  - start debugging
-run < <file> - run with piped input
-up - follow trace
-print <variable> - print variable
+gdb <cmd> — Start gdb
+run <arguments>  — Start debugging
+run < <file> — Run with piped input
+up — Follow trace
+print <variable> — Print variable
+
 
 COREDUMP:
-ulimit -c unlimited - set core file limit to unlimited
-gdb <command> core - debug core file with gdb
+ulimit -c unlimited — Set core file limit to unlimited
+gdb <cmd> core — Debug core file with gdb
+
 
 CHROME:
-F6, ctrl+l, alt+d - go to address bar
+F6, ctrl+l, alt+d — Go to address bar
+```
+     
